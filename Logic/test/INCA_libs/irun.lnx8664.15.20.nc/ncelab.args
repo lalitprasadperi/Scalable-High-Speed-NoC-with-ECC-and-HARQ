@@ -4,6 +4,7 @@
 //
 +nctimescale+1ns/1ns
 +access+r
++gui
 -noshowtop
 -DISABLE_SEM2009
 -timescale

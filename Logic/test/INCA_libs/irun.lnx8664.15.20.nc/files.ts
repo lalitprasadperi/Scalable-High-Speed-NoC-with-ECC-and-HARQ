@@ -8,6 +8,6 @@
 1713214875 /home/lalitprasad/ECE5545/AXI_NOC/Logic/rtl/axicb_mst_switch.sv
 1713214974 /home/lalitprasad/ECE5545/AXI_NOC/Logic/rtl/axicb_slv_switch.sv
 1713215003 /home/lalitprasad/ECE5545/AXI_NOC/Logic/rtl/axicb_switch_top.sv
-1713227092 /home/lalitprasad/ECE5545/AXI_NOC/Logic/rtl/axicb_crossbar_lite_top.sv
-1713214250 /home/lalitprasad/ECE5545/AXI_NOC/Logic/rtl/axicb_crossbar_top.sv
-1713228124 /home/lalitprasad/ECE5545/AXI_NOC/Logic/test/simple_tb.v
+1713232488 /home/lalitprasad/ECE5545/AXI_NOC/Logic/rtl/axicb_crossbar.sv
+1713232527 /home/lalitprasad/ECE5545/AXI_NOC/Logic/rtl/axicb_crossbar_top.sv
+1713232843 /home/lalitprasad/ECE5545/AXI_NOC/Logic/test/simple_tb.v
