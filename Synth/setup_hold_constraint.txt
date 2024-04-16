@@ -1,0 +1,18 @@
+﻿Setup Time Specifications for Data Input Ports (From Master Agents)
+
+Data port    Clock frequency (MHz)    Setup time (ps)
+-----------------------------------------------------
+slv0_wdata          200                      30
+slv1_wdata          100                      30
+slv2_wdata          50                       30
+slv3_wdata          25                       30
+
+
+Hold Time Specifications for Data Output Ports (To Slave Agents)
+
+Data port    Clock frequency (MHz)    Hold time (ps)
+-----------------------------------------------------
+mst0_wdata          200                      10
+mst1_wdata          100                      10
+mst2_wdata          50                       10
+mst3_wdata          25                       10
