@@ -1,0 +1,29 @@
+//
+// File created by:  ncverilog
+// Do not modify this file
+//
+-XLMODE
+./INCA_libs/irun.lnx8664.15.20.nc
+-RUNMODE
+../../Logic/rtl/axicb_scfifo_ram.sv
+../../Logic/rtl/axicb_scfifo.sv
+../../Logic/rtl/axicb_pipeline.sv
+../../Logic/rtl/axicb_round_robin_core.sv
+../../Logic/rtl/axicb_round_robin.sv
+../../Logic/rtl/axicb_mst_if.sv
+../../Logic/rtl/axicb_slv_if.sv
+../../Logic/rtl/axicb_mst_switch.sv
+../../Logic/rtl/axicb_slv_switch.sv
+../../Logic/rtl/axicb_switch_top.sv
+../../Logic/rtl/axicb_crossbar_lite_top.sv
+../../Logic/rtl/axicb_crossbar_top.sv
+simple_tb.v
+-CDSLIB
+./INCA_libs/irun.lnx8664.15.20.nc/cdsrun.lib
+-HDLVAR
+./INCA_libs/irun.lnx8664.15.20.nc/hdlrun.var
+-MESSAGES
+-UPDATE
+-XLLIBSTORE
+./INCA_libs/irun.lnx8664.15.20.nc/xllibs
+-ALLOWUNBOUND

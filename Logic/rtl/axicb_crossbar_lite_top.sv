@@ -1,18 +1,16 @@
+//--------------------------------------------------------------------
+// Author: Lalit Prasad Peri (lalitprasad@vt.edu)
+// Group5 Project: Advance VLSI Design, ECE5545 Spring2024 
+//--------------------------------------------------------------------
 // distributed under the mit license
 // https://opensource.org/licenses/mit-license.php
+//--------------------------------------------------------------------
 
-///////////////////////////////////////////////////////////////////////////////
-//
+//--------------------------------------------------------------------
 // AXI4 crossbar top level, instanciating the global infrastructure of the
 // core. All the master and slave interfaces are instanciated here along the
 // switching logic.
-//
-///////////////////////////////////////////////////////////////////////////////
-
-`timescale 1 ns / 1 ps
-`default_nettype none
-
-`include "axicb_checker.sv"
+//--------------------------------------------------------------------
 
 module axicb_crossbar_lite_top
 
@@ -952,4 +950,4 @@ module axicb_crossbar_lite_top
 
 endmodule
 
-`resetall
+//--------------------------------------------------------------------

@@ -1,8 +1,10 @@
+//--------------------------------------------------------------------
+// Author: Lalit Prasad Peri (lalitprasad@vt.edu)
+// Group5 Project: Advance VLSI Design, ECE5545 Spring2024 
+//--------------------------------------------------------------------
 // distributed under the mit license
 // https://opensource.org/licenses/mit-license.php
 
-`timescale 1 ns / 1 ps
-`default_nettype none
 
 module axicb_scfifo_ram
 
@@ -38,4 +40,4 @@ module axicb_scfifo_ram
 
 endmodule
 
-`resetall
+

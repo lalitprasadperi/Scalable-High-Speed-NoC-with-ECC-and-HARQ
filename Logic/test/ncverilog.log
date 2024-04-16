@@ -1,0 +1,776 @@
+ncverilog(64): 15.20-s073: (c) Copyright 1995-2019 Cadence Design Systems, Inc.
+TOOL:	ncverilog	15.20-s073: Started on Apr 15, 2024 at 20:42:09 EDT
+ncverilog
+	-disable_sem2009
+	../../Logic/rtl/axicb_scfifo_ram.sv
+	../../Logic/rtl/axicb_scfifo.sv
+	../../Logic/rtl/axicb_pipeline.sv
+	../../Logic/rtl/axicb_round_robin_core.sv
+	../../Logic/rtl/axicb_round_robin.sv
+	../../Logic/rtl/axicb_mst_if.sv
+	../../Logic/rtl/axicb_slv_if.sv
+	../../Logic/rtl/axicb_mst_switch.sv
+	../../Logic/rtl/axicb_slv_switch.sv
+	../../Logic/rtl/axicb_switch_top.sv
+	../../Logic/rtl/axicb_crossbar_lite_top.sv
+	../../Logic/rtl/axicb_crossbar_top.sv
+	simple_tb.v
+	+nctimescale+1ns/1ns
+	+access+r
+file: ../../Logic/rtl/axicb_scfifo_ram.sv
+	module worklib.axicb_scfifo_ram:sv
+		errors: 0, warnings: 0
+file: ../../Logic/rtl/axicb_scfifo.sv
+	module worklib.axicb_scfifo:sv
+		errors: 0, warnings: 0
+file: ../../Logic/rtl/axicb_pipeline.sv
+	module worklib.axicb_pipeline:sv
+		errors: 0, warnings: 0
+file: ../../Logic/rtl/axicb_round_robin_core.sv
+	module worklib.axicb_round_robin_core:sv
+		errors: 0, warnings: 0
+file: ../../Logic/rtl/axicb_round_robin.sv
+	module worklib.axicb_round_robin:sv
+		errors: 0, warnings: 0
+file: ../../Logic/rtl/axicb_mst_if.sv
+	module worklib.axicb_mst_if:sv
+		errors: 0, warnings: 0
+file: ../../Logic/rtl/axicb_slv_if.sv
+	module worklib.axicb_slv_if:sv
+		errors: 0, warnings: 0
+file: ../../Logic/rtl/axicb_mst_switch.sv
+	module worklib.axicb_mst_switch:sv
+		errors: 0, warnings: 0
+file: ../../Logic/rtl/axicb_slv_switch.sv
+	module worklib.axicb_slv_switch:sv
+		errors: 0, warnings: 0
+file: ../../Logic/rtl/axicb_switch_top.sv
+	module worklib.axicb_switch_top:sv
+		errors: 0, warnings: 0
+file: ../../Logic/rtl/axicb_crossbar_lite_top.sv
+	module worklib.axicb_crossbar_lite_top:sv
+		errors: 0, warnings: 0
+file: ../../Logic/rtl/axicb_crossbar_top.sv
+	module worklib.axicb_crossbar_top:sv
+		errors: 0, warnings: 0
+file: simple_tb.v
+	module worklib.testbench:v
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+        .slv0_aclk    ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,179|25): port sizes differ in port connection (32/1).
+        .slv0_aresetn ('h1),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,180|25): port sizes differ in port connection (32/1).
+        .slv0_srst    ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,181|25): port sizes differ in port connection (32/1).
+        .slv0_awvalid ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,182|25): port sizes differ in port connection (32/1).
+        .slv0_awaddr  ('hA5A5),
+                            |
+ncelab: *W,CUVMPW (./simple_tb.v,183|28): port sizes differ in port connection (32/16).
+        .slv0_awlen   ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,184|25): port sizes differ in port connection (32/8).
+        .slv0_awsize  ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,185|25): port sizes differ in port connection (32/3).
+        .slv0_awburst ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,186|25): port sizes differ in port connection (32/2).
+        .slv0_awlock  ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,187|25): port sizes differ in port connection (32/2).
+        .slv0_awcache ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,188|25): port sizes differ in port connection (32/4).
+        .slv0_awprot  ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,189|25): port sizes differ in port connection (32/3).
+        .slv0_awqos   ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,190|25): port sizes differ in port connection (32/4).
+        .slv0_awregion('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,191|25): port sizes differ in port connection (32/4).
+        .slv0_awid    ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,192|25): port sizes differ in port connection (32/8).
+        .slv0_awuser  ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,193|25): port sizes differ in port connection (32/1).
+        .slv0_wvalid  ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,194|25): port sizes differ in port connection (32/1).
+        .slv0_wlast   ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,195|25): port sizes differ in port connection (32/1).
+        .slv0_wdata   ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,196|25): port sizes differ in port connection (32/40).
+        .slv0_wstrb   ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,197|25): port sizes differ in port connection (32/5).
+        .slv0_wuser   ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,198|25): port sizes differ in port connection (32/1).
+        .slv0_bready  ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,199|25): port sizes differ in port connection (32/1).
+        .slv0_arvalid ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,200|25): port sizes differ in port connection (32/1).
+        .slv0_araddr  ('hC3C3),
+                            |
+ncelab: *W,CUVMPW (./simple_tb.v,201|28): port sizes differ in port connection (32/16).
+        .slv0_arlen   ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,202|25): port sizes differ in port connection (32/8).
+        .slv0_arsize  ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,203|25): port sizes differ in port connection (32/3).
+        .slv0_arburst ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,204|25): port sizes differ in port connection (32/2).
+        .slv0_arlock  ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,205|25): port sizes differ in port connection (32/2).
+        .slv0_arcache ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,206|25): port sizes differ in port connection (32/4).
+        .slv0_arprot  ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,207|25): port sizes differ in port connection (32/3).
+        .slv0_arqos   ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,208|25): port sizes differ in port connection (32/4).
+        .slv0_arregion('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,209|25): port sizes differ in port connection (32/4).
+        .slv0_arid    ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,210|25): port sizes differ in port connection (32/8).
+        .slv0_aruser  ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,211|25): port sizes differ in port connection (32/1).
+        .slv0_rready  ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,212|25): port sizes differ in port connection (32/1).
+        .slv1_aclk    ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,229|25): port sizes differ in port connection (32/1).
+        .slv1_aresetn ('h1),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,230|25): port sizes differ in port connection (32/1).
+        .slv1_srst    ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,231|25): port sizes differ in port connection (32/1).
+        .slv1_awvalid ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,232|25): port sizes differ in port connection (32/1).
+        .slv1_awaddr  ('hA5A5),
+                            |
+ncelab: *W,CUVMPW (./simple_tb.v,233|28): port sizes differ in port connection (32/16).
+        .slv1_awlen   ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,234|25): port sizes differ in port connection (32/8).
+        .slv1_awsize  ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,235|25): port sizes differ in port connection (32/3).
+        .slv1_awburst ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,236|25): port sizes differ in port connection (32/2).
+        .slv1_awlock  ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,237|25): port sizes differ in port connection (32/2).
+        .slv1_awcache ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,238|25): port sizes differ in port connection (32/4).
+        .slv1_awprot  ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,239|25): port sizes differ in port connection (32/3).
+        .slv1_awqos   ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,240|25): port sizes differ in port connection (32/4).
+        .slv1_awregion('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,241|25): port sizes differ in port connection (32/4).
+        .slv1_awid    ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,242|25): port sizes differ in port connection (32/8).
+        .slv1_awuser  ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,243|25): port sizes differ in port connection (32/1).
+        .slv1_wvalid  ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,244|25): port sizes differ in port connection (32/1).
+        .slv1_wlast   ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,245|25): port sizes differ in port connection (32/1).
+        .slv1_wdata   ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,246|25): port sizes differ in port connection (32/40).
+        .slv1_wstrb   ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,247|25): port sizes differ in port connection (32/5).
+        .slv1_wuser   ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,248|25): port sizes differ in port connection (32/1).
+        .slv1_bready  ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,249|25): port sizes differ in port connection (32/1).
+        .slv1_arvalid ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,250|25): port sizes differ in port connection (32/1).
+        .slv1_araddr  ('hC3C3),
+                            |
+ncelab: *W,CUVMPW (./simple_tb.v,251|28): port sizes differ in port connection (32/16).
+        .slv1_arlen   ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,252|25): port sizes differ in port connection (32/8).
+        .slv1_arsize  ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,253|25): port sizes differ in port connection (32/3).
+        .slv1_arburst ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,254|25): port sizes differ in port connection (32/2).
+        .slv1_arlock  ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,255|25): port sizes differ in port connection (32/2).
+        .slv1_arcache ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,256|25): port sizes differ in port connection (32/4).
+        .slv1_arprot  ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,257|25): port sizes differ in port connection (32/3).
+        .slv1_arqos   ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,258|25): port sizes differ in port connection (32/4).
+        .slv1_arregion('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,259|25): port sizes differ in port connection (32/4).
+        .slv1_arid    ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,260|25): port sizes differ in port connection (32/8).
+        .slv1_aruser  ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,261|25): port sizes differ in port connection (32/1).
+        .slv1_rready  ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,262|25): port sizes differ in port connection (32/1).
+        .slv2_aclk    ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,279|25): port sizes differ in port connection (32/1).
+        .slv2_aresetn ('h1),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,280|25): port sizes differ in port connection (32/1).
+        .slv2_srst    ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,281|25): port sizes differ in port connection (32/1).
+        .slv2_awvalid ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,282|25): port sizes differ in port connection (32/1).
+        .slv2_awaddr  ('hA5A5),
+                            |
+ncelab: *W,CUVMPW (./simple_tb.v,283|28): port sizes differ in port connection (32/16).
+        .slv2_awlen   ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,284|25): port sizes differ in port connection (32/8).
+        .slv2_awsize  ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,285|25): port sizes differ in port connection (32/3).
+        .slv2_awburst ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,286|25): port sizes differ in port connection (32/2).
+        .slv2_awlock  ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,287|25): port sizes differ in port connection (32/2).
+        .slv2_awcache ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,288|25): port sizes differ in port connection (32/4).
+        .slv2_awprot  ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,289|25): port sizes differ in port connection (32/3).
+        .slv2_awqos   ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,290|25): port sizes differ in port connection (32/4).
+        .slv2_awregion('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,291|25): port sizes differ in port connection (32/4).
+        .slv2_awid    ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,292|25): port sizes differ in port connection (32/8).
+        .slv2_awuser  ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,293|25): port sizes differ in port connection (32/1).
+        .slv2_wvalid  ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,294|25): port sizes differ in port connection (32/1).
+        .slv2_wlast   ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,295|25): port sizes differ in port connection (32/1).
+        .slv2_wdata   ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,296|25): port sizes differ in port connection (32/40).
+        .slv2_wstrb   ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,297|25): port sizes differ in port connection (32/5).
+        .slv2_wuser   ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,298|25): port sizes differ in port connection (32/1).
+        .slv2_bready  ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,299|25): port sizes differ in port connection (32/1).
+        .slv2_arvalid ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,300|25): port sizes differ in port connection (32/1).
+        .slv2_araddr  ('hC3C3),
+                            |
+ncelab: *W,CUVMPW (./simple_tb.v,301|28): port sizes differ in port connection (32/16).
+        .slv2_arlen   ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,302|25): port sizes differ in port connection (32/8).
+        .slv2_arsize  ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,303|25): port sizes differ in port connection (32/3).
+        .slv2_arburst ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,304|25): port sizes differ in port connection (32/2).
+        .slv2_arlock  ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,305|25): port sizes differ in port connection (32/2).
+        .slv2_arcache ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,306|25): port sizes differ in port connection (32/4).
+        .slv2_arprot  ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,307|25): port sizes differ in port connection (32/3).
+        .slv2_arqos   ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,308|25): port sizes differ in port connection (32/4).
+        .slv2_arregion('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,309|25): port sizes differ in port connection (32/4).
+        .slv2_arid    ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,310|25): port sizes differ in port connection (32/8).
+        .slv2_aruser  ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,311|25): port sizes differ in port connection (32/1).
+        .slv2_rready  ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,312|25): port sizes differ in port connection (32/1).
+        .slv3_aclk    ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,329|25): port sizes differ in port connection (32/1).
+        .slv3_aresetn ('h1),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,330|25): port sizes differ in port connection (32/1).
+        .slv3_srst    ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,331|25): port sizes differ in port connection (32/1).
+        .slv3_awvalid ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,332|25): port sizes differ in port connection (32/1).
+        .slv3_awaddr  ('hA5A5),
+                            |
+ncelab: *W,CUVMPW (./simple_tb.v,333|28): port sizes differ in port connection (32/16).
+        .slv3_awlen   ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,334|25): port sizes differ in port connection (32/8).
+        .slv3_awsize  ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,335|25): port sizes differ in port connection (32/3).
+        .slv3_awburst ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,336|25): port sizes differ in port connection (32/2).
+        .slv3_awlock  ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,337|25): port sizes differ in port connection (32/2).
+        .slv3_awcache ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,338|25): port sizes differ in port connection (32/4).
+        .slv3_awprot  ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,339|25): port sizes differ in port connection (32/3).
+        .slv3_awqos   ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,340|25): port sizes differ in port connection (32/4).
+        .slv3_awregion('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,341|25): port sizes differ in port connection (32/4).
+        .slv3_awid    ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,342|25): port sizes differ in port connection (32/8).
+        .slv3_awuser  ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,343|25): port sizes differ in port connection (32/1).
+        .slv3_wvalid  ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,344|25): port sizes differ in port connection (32/1).
+        .slv3_wlast   ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,345|25): port sizes differ in port connection (32/1).
+        .slv3_wdata   ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,346|25): port sizes differ in port connection (32/40).
+        .slv3_wstrb   ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,347|25): port sizes differ in port connection (32/5).
+        .slv3_wuser   ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,348|25): port sizes differ in port connection (32/1).
+        .slv3_bready  ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,349|25): port sizes differ in port connection (32/1).
+        .slv3_arvalid ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,350|25): port sizes differ in port connection (32/1).
+        .slv3_araddr  ('hC3C3),
+                            |
+ncelab: *W,CUVMPW (./simple_tb.v,351|28): port sizes differ in port connection (32/16).
+        .slv3_arlen   ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,352|25): port sizes differ in port connection (32/8).
+        .slv3_arsize  ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,353|25): port sizes differ in port connection (32/3).
+        .slv3_arburst ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,354|25): port sizes differ in port connection (32/2).
+        .slv3_arlock  ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,355|25): port sizes differ in port connection (32/2).
+        .slv3_arcache ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,356|25): port sizes differ in port connection (32/4).
+        .slv3_arprot  ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,357|25): port sizes differ in port connection (32/3).
+        .slv3_arqos   ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,358|25): port sizes differ in port connection (32/4).
+        .slv3_arregion('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,359|25): port sizes differ in port connection (32/4).
+        .slv3_arid    ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,360|25): port sizes differ in port connection (32/8).
+        .slv3_aruser  ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,361|25): port sizes differ in port connection (32/1).
+        .slv3_rready  ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,362|25): port sizes differ in port connection (32/1).
+        .mst0_aclk    ('h1),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,380|25): port sizes differ in port connection (32/1).
+        .mst0_aresetn ('h1),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,381|25): port sizes differ in port connection (32/1).
+        .mst0_srst    ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,382|25): port sizes differ in port connection (32/1).
+        .mst0_awready ('h1),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,383|25): port sizes differ in port connection (32/1).
+        .mst0_wready  ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,384|25): port sizes differ in port connection (32/1).
+        .mst0_bvalid  ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,385|25): port sizes differ in port connection (32/1).
+        .mst0_bid     ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,386|25): port sizes differ in port connection (32/8).
+        .mst0_bresp   ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,387|25): port sizes differ in port connection (32/2).
+        .mst0_buser   ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,388|25): port sizes differ in port connection (32/1).
+        .mst0_arready ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,389|25): port sizes differ in port connection (32/1).
+        .mst0_rvalid  ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,390|25): port sizes differ in port connection (32/1).
+        .mst0_rid     ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,391|25): port sizes differ in port connection (32/8).
+        .mst0_rresp   ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,392|25): port sizes differ in port connection (32/2).
+        .mst0_rdata   ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,393|25): port sizes differ in port connection (32/40).
+        .mst0_rlast   ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,394|25): port sizes differ in port connection (32/1).
+        .mst0_ruser   ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,395|25): port sizes differ in port connection (32/1).
+        .mst1_aclk    ('h1),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,430|25): port sizes differ in port connection (32/1).
+        .mst1_aresetn ('h1),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,431|25): port sizes differ in port connection (32/1).
+        .mst1_srst    ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,432|25): port sizes differ in port connection (32/1).
+        .mst1_awready ('h1),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,433|25): port sizes differ in port connection (32/1).
+        .mst1_wready  ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,434|25): port sizes differ in port connection (32/1).
+        .mst1_bvalid  ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,435|25): port sizes differ in port connection (32/1).
+        .mst1_bid     ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,436|25): port sizes differ in port connection (32/8).
+        .mst1_bresp   ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,437|25): port sizes differ in port connection (32/2).
+        .mst1_buser   ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,438|25): port sizes differ in port connection (32/1).
+        .mst1_arready ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,439|25): port sizes differ in port connection (32/1).
+        .mst1_rvalid  ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,440|25): port sizes differ in port connection (32/1).
+        .mst1_rid     ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,441|25): port sizes differ in port connection (32/8).
+        .mst1_rresp   ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,442|25): port sizes differ in port connection (32/2).
+        .mst1_rdata   ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,443|25): port sizes differ in port connection (32/40).
+        .mst1_rlast   ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,444|25): port sizes differ in port connection (32/1).
+        .mst1_ruser   ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,445|25): port sizes differ in port connection (32/1).
+        .mst2_aclk    ('h1),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,481|25): port sizes differ in port connection (32/1).
+        .mst2_aresetn ('h1),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,482|25): port sizes differ in port connection (32/1).
+        .mst2_srst    ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,483|25): port sizes differ in port connection (32/1).
+        .mst2_awready ('h1),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,484|25): port sizes differ in port connection (32/1).
+        .mst2_wready  ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,485|25): port sizes differ in port connection (32/1).
+        .mst2_bvalid  ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,486|25): port sizes differ in port connection (32/1).
+        .mst2_bid     ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,487|25): port sizes differ in port connection (32/8).
+        .mst2_bresp   ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,488|25): port sizes differ in port connection (32/2).
+        .mst2_buser   ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,489|25): port sizes differ in port connection (32/1).
+        .mst2_arready ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,490|25): port sizes differ in port connection (32/1).
+        .mst2_rvalid  ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,491|25): port sizes differ in port connection (32/1).
+        .mst2_rid     ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,492|25): port sizes differ in port connection (32/8).
+        .mst2_rresp   ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,493|25): port sizes differ in port connection (32/2).
+        .mst2_rdata   ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,494|25): port sizes differ in port connection (32/40).
+        .mst2_rlast   ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,495|25): port sizes differ in port connection (32/1).
+        .mst2_ruser   ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,496|25): port sizes differ in port connection (32/1).
+        .mst3_aclk    ('h1),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,531|25): port sizes differ in port connection (32/1).
+        .mst3_aresetn ('h1),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,532|25): port sizes differ in port connection (32/1).
+        .mst3_srst    ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,533|25): port sizes differ in port connection (32/1).
+        .mst3_awready ('h1),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,534|25): port sizes differ in port connection (32/1).
+        .mst3_wready  ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,535|25): port sizes differ in port connection (32/1).
+        .mst3_bvalid  ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,536|25): port sizes differ in port connection (32/1).
+        .mst3_bid     ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,537|25): port sizes differ in port connection (32/8).
+        .mst3_bresp   ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,538|25): port sizes differ in port connection (32/2).
+        .mst3_buser   ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,539|25): port sizes differ in port connection (32/1).
+        .mst3_arready ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,540|25): port sizes differ in port connection (32/1).
+        .mst3_rvalid  ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,541|25): port sizes differ in port connection (32/1).
+        .mst3_rid     ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,542|25): port sizes differ in port connection (32/8).
+        .mst3_rresp   ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,543|25): port sizes differ in port connection (32/2).
+        .mst3_rdata   ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,544|25): port sizes differ in port connection (32/40).
+        .mst3_rlast   ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,545|25): port sizes differ in port connection (32/1).
+        .mst3_ruser   ('h0),
+                         |
+ncelab: *W,CUVMPW (./simple_tb.v,546|25): port sizes differ in port connection (32/1).
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.axicb_crossbar_lite_top:sv <0x30406a78>
+			streams: 116, words: 23092
+		worklib.axicb_crossbar_top:sv <0x02f5f464>
+			streams: 346, words: 71857
+		worklib.axicb_crossbar_top:sv <0x2be79fe3>
+			streams: 346, words: 78527
+		worklib.axicb_mst_if:sv <0x0688e743>
+			streams:  35, words:  9179
+		worklib.axicb_mst_if:sv <0x08e99cf5>
+			streams:  35, words:  8572
+		worklib.axicb_mst_if:sv <0x308b02e7>
+			streams:  35, words:  9193
+		worklib.axicb_mst_if:sv <0x3eea7951>
+			streams:  35, words:  8572
+		worklib.axicb_mst_if:sv <0x540d3b11>
+			streams:  35, words:  8572
+		worklib.axicb_mst_if:sv <0x5a6c40a7>
+			streams:  35, words:  9193
+		worklib.axicb_mst_if:sv <0x620edeb5>
+			streams:  35, words:  8572
+		worklib.axicb_mst_if:sv <0x6c6fa503>
+			streams:  35, words:  9193
+		worklib.axicb_mst_switch:sv <0x2abf9c1e>
+			streams:  29, words: 15370
+		worklib.axicb_mst_switch:sv <0x4b90b2fa>
+			streams:  29, words: 14752
+		worklib.axicb_pipeline:sv <0x0b59210a>
+			streams:   3, words:   834
+		worklib.axicb_pipeline:sv <0x19acf6fe>
+			streams:   3, words:   749
+		worklib.axicb_pipeline:sv <0x1fc375a3>
+			streams:   3, words:   834
+		worklib.axicb_pipeline:sv <0x3d118303>
+			streams:   3, words:   749
+		worklib.axicb_pipeline:sv <0x72d09b89>
+			streams:   3, words:   749
+		worklib.axicb_round_robin:sv <0x189138ca>
+			streams:  17, words:  5183
+		worklib.axicb_round_robin_core:sv <0x09ef5fd2>
+			streams:   3, words:  3423
+		worklib.axicb_scfifo:sv <0x3a684b2d>
+			streams:  13, words:  3839
+		worklib.axicb_scfifo:sv <0x3d285236>
+			streams:  13, words:  3691
+		worklib.axicb_scfifo:sv <0x40ff1a5d>
+			streams:  13, words:  3691
+		worklib.axicb_scfifo:sv <0x4899ef5a>
+			streams:  13, words:  3691
+		worklib.axicb_scfifo:sv <0x57ab1f59>
+			streams:  13, words:  3727
+		worklib.axicb_scfifo:sv <0x653d45cd>
+			streams:  13, words:  3691
+		worklib.axicb_scfifo:sv <0x6ffeacf2>
+			streams:  13, words:  3839
+		worklib.axicb_scfifo:sv <0x7633458f>
+			streams:  13, words:  3685
+		worklib.axicb_scfifo_ram:sv <0x10147856>
+			streams:   3, words:  1424
+		worklib.axicb_scfifo_ram:sv <0x1063a5fd>
+			streams:   3, words:  1214
+		worklib.axicb_scfifo_ram:sv <0x14a52977>
+			streams:   3, words:  1302
+		worklib.axicb_scfifo_ram:sv <0x256cce97>
+			streams:   3, words:  1215
+		worklib.axicb_scfifo_ram:sv <0x3aab97d4>
+			streams:   3, words:  1302
+		worklib.axicb_scfifo_ram:sv <0x4a8236dc>
+			streams:   3, words:  2034
+		worklib.axicb_scfifo_ram:sv <0x4dbeb4ab>
+			streams:   3, words:  2164
+		worklib.axicb_scfifo_ram:sv <0x4ff97d88>
+			streams:   3, words:  1208
+		worklib.axicb_slv_if:sv <0x081f7b73>
+			streams:  33, words:  8496
+		worklib.axicb_slv_if:sv <0x475071b0>
+			streams:  33, words:  7989
+		worklib.axicb_slv_switch:sv <0x2da79a13>
+			streams:  59, words: 28262
+		worklib.axicb_slv_switch:sv <0x6d49e047>
+			streams:  59, words: 27401
+		worklib.axicb_switch_top:sv <0x35c6ea9f>
+			streams: 307, words: 93402
+		worklib.axicb_switch_top:sv <0x4b1565be>
+			streams: 307, words: 88312
+		worklib.testbench:v <0x4efa8336>
+			streams:   7, words:  3544
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                  Instances  Unique
+		Modules:                406      13
+		Registers:             4544     659
+		Scalar wires:          4870       -
+		Expanded wires:          80      20
+		Vectored wires:        3386       -
+		Always blocks:          424      12
+		Initial blocks:         201      14
+		Cont. assignments:     2352     279
+		Pseudo assignments:    2678    1655
+		Simulation timescale:   1ns
+	Writing initial simulation snapshot: worklib.axicb_crossbar_lite_top:sv
+Loading snapshot worklib.axicb_crossbar_lite_top:sv .................... Done
+ncsim> source /software/cadence/installs/INCISIVE152/tools/inca/files/ncsimrc
+ncsim> run
+--------------Start of Simulation-------------
+
+ NOC: Compile /Elaboration: PASS
+
+--------------End of Simulation-------------
+
+Simulation complete via $finish(1) at time 1 US + 0
+./simple_tb.v:19   $finish;
+ncsim> exit
+TOOL:	ncverilog	15.20-s073: Exiting on Apr 15, 2024 at 20:42:10 EDT  (total: 00:00:01)

@@ -1,52 +1,41 @@
+//--------------------------------------------------------------------
+// Author: Lalit Prasad Peri (lalitprasad@vt.edu)
+// Group5 Project: Advance VLSI Design, ECE5545 Spring2024 
+//--------------------------------------------------------------------
 // distributed under the mit license
 // https://opensource.org/licenses/mit-license.php
-
-///////////////////////////////////////////////////////////////////////////////
-//
+//--------------------------------------------------------------------
 // AXI4 crossbar top level, instanciating the global infrastructure of the
 // core. All the master and slave interfaces are instanciated here along the
 // switching logic.
-//
-///////////////////////////////////////////////////////////////////////////////
-
-`timescale 1 ns / 1 ps
-`default_nettype none
-
-`include "axicb_checker.sv"
+//--------------------------------------------------------------------
 
 module axicb_crossbar_top
-
     #(
-        ///////////////////////////////////////////////////////////////////////
+        //--------------------------------------------------------------------
         // Global configuration
-        ///////////////////////////////////////////////////////////////////////
-
+        //--------------------------------------------------------------------
         // Address width in bits
-        parameter AXI_ADDR_W = 8,
+        parameter AXI_ADDR_W = 16,
         // ID width in bits
         parameter AXI_ID_W = 8,
         // Data width in bits
-        parameter AXI_DATA_W = 8,
-
+        parameter AXI_DATA_W = 40,
         // Number of master(s)
         parameter MST_NB = 4,
         // Number of slave(s)
         parameter SLV_NB = 4,
-
         // Switching logic pipelining (0 deactivate, 1 enable)
         parameter MST_PIPELINE = 0,
         parameter SLV_PIPELINE = 0,
-
         // STRB support:
         //   - 0: contiguous wstrb (store only 1st/last dataphase)
         //   - 1: full wstrb transport
         parameter STRB_MODE = 1,
-
         // AXI Signals Supported:
         //   - 0: AXI4-lite
         //   - 1: AXI
         parameter AXI_SIGNALING = 0,
-
         // USER fields transport enabling (0 deactivate, 1 activate)
         parameter USER_SUPPORT = 0,
         // USER fields width in bits
@@ -54,50 +43,33 @@ module axicb_crossbar_top
         parameter AXI_WUSER_W = 1,
         parameter AXI_BUSER_W = 1,
         parameter AXI_RUSER_W = 1,
-
         // Timeout configuration in clock cycles, applied to all channels
         parameter TIMEOUT_VALUE = 10000,
         // Activate the timer to avoid deadlock
         parameter TIMEOUT_ENABLE = 1,
-
-
-        ///////////////////////////////////////////////////////////////////////
-        //
+        //--------------------------------------------------------------------
         // Master agent configurations:
-        //
         //   - MSTx_CDC: implement input CDC stage, 0 or 1
-        //
-        //   - MSTx_OSTDREQ_NUM: maximum number of requests a master can
-        //                       store internally
-        //
+        //   - MSTx_OSTDREQ_NUM: maximum number of requests a master can store internally
         //   - MSTx_OSTDREQ_SIZE: size of an outstanding request in dataphase
-        //
         //   - MSTx_PRIORITY: priority applied to this master in the arbitrers,
         //                    from 0 to 3 included
         //   - MSTx_ROUTES: routing from the master to the slaves allowed in
         //                  the switching logic. Bit 0 for slave 0, bit 1 for
         //                  slave 1, ...
-        //
         //   - MSTx_ID_MASK : A mask applied in slave completion channel to
         //                    determine which master to route back the
         //                    BRESP/RRESP completions.
-        //
         //   - MSTx_RW: Slect if the interface is 
         //         - Read/Write (=0)
         //         - Read-only (=1) 
         //         - Write-only (=2)
-        //
         // The size of a master's internal buffer is equal to:
-        //
         // SIZE = AXI_DATA_W * MSTx_OSTDREQ_NUM * MSTx_OSTDREQ_SIZE (in bits)
-        //
-        ///////////////////////////////////////////////////////////////////////
-
-
-        ///////////////////////////////////////////////////////////////////////
+        //--------------------------------------------------------------------
+        //--------------------------------------------------------------------
         // Master 0 configuration
-        ///////////////////////////////////////////////////////////////////////
-
+        //--------------------------------------------------------------------
         parameter MST0_CDC = 0,
         parameter MST0_OSTDREQ_NUM = 4,
         parameter MST0_OSTDREQ_SIZE = 1,
@@ -105,11 +77,9 @@ module axicb_crossbar_top
         parameter [SLV_NB-1:0] MST0_ROUTES = 4'b1_1_1_1,
         parameter [AXI_ID_W-1:0] MST0_ID_MASK = 'h10,
         parameter MST0_RW = 0,
-
-        ///////////////////////////////////////////////////////////////////////
+        //--------------------------------------------------------------------
         // Master 1 configuration
-        ///////////////////////////////////////////////////////////////////////
-
+        //--------------------------------------------------------------------
         parameter MST1_CDC = 0,
         parameter MST1_OSTDREQ_NUM = 4,
         parameter MST1_OSTDREQ_SIZE = 1,
@@ -117,11 +87,9 @@ module axicb_crossbar_top
         parameter [SLV_NB-1:0] MST1_ROUTES = 4'b1_1_1_1,
         parameter [AXI_ID_W-1:0] MST1_ID_MASK = 'h20,
         parameter MST1_RW = 0,
-
-        ///////////////////////////////////////////////////////////////////////
+        //--------------------------------------------------------------------
         // Master 2 configuration
-        ///////////////////////////////////////////////////////////////////////
-
+        //--------------------------------------------------------------------
         parameter MST2_CDC = 0,
         parameter MST2_OSTDREQ_NUM = 4,
         parameter MST2_OSTDREQ_SIZE = 1,
@@ -129,11 +97,9 @@ module axicb_crossbar_top
         parameter [SLV_NB-1:0] MST2_ROUTES = 4'b1_1_1_1,
         parameter [AXI_ID_W-1:0] MST2_ID_MASK = 'h30,
         parameter MST2_RW = 0,
-
-        ///////////////////////////////////////////////////////////////////////
+        //--------------------------------------------------------------------
         // Master 3 configuration
-        ///////////////////////////////////////////////////////////////////////
-
+        //--------------------------------------------------------------------
         parameter MST3_CDC = 0,
         parameter MST3_OSTDREQ_NUM = 4,
         parameter MST3_OSTDREQ_SIZE = 1,
@@ -141,74 +107,50 @@ module axicb_crossbar_top
         parameter [SLV_NB-1:0] MST3_ROUTES = 4'b1_1_1_1,
         parameter [AXI_ID_W-1:0] MST3_ID_MASK = 'h40,
         parameter MST3_RW = 0,
-
-
-        ///////////////////////////////////////////////////////////////////////
-        //
+        //--------------------------------------------------------------------
         // Slave agent configurations:
-        //
+        //--------------------------------------------------------------------
         //   - SLVx_CDC: implement input CDC stage, 0 or 1
-        //
-        //   - SLVx_OSTDREQ_NUM: maximum number of requests slave can
-        //                       store internally
-        //
+        //   - SLVx_OSTDREQ_NUM: maximum number of requests slave can store internally
         //   - SLVx_OSTDREQ_SIZE: size of an outstanding request in dataphase
-        //
         //   - SLVx_START_ADDR: Start address allocated to the slave, in byte
-        //
         //   - SLVx_END_ADDR: End address allocated to the slave, in byte
-        //
-        //   - SLVx_KEEP_BASE_ADDR: Keep the absolute address of the slave in
-        //     the memory map. Default to 0.
-        //
+        //   - SLVx_KEEP_BASE_ADDR: Keep the absolute address of the slave in the memory map. Default to 0.
         // The size of a slave's internal buffer is equal to:
-        //
         //   AXI_DATA_W * SLVx_OSTDREQ_NUM * SLVx_OSTDREQ_SIZE (in bits)
-        //
         // A request is routed to a slave if:
-        //
         //   START_ADDR <= ADDR <= END_ADDR
-        //
-        ///////////////////////////////////////////////////////////////////////
-
-
-        ///////////////////////////////////////////////////////////////////////
+        //--------------------------------------------------------------------
+        //--------------------------------------------------------------------
         // Slave 0 configuration
-        ///////////////////////////////////////////////////////////////////////
-
+        //--------------------------------------------------------------------
         parameter SLV0_CDC = 0,
         parameter SLV0_START_ADDR = 0,
         parameter SLV0_END_ADDR = 4095,
         parameter SLV0_OSTDREQ_NUM = 4,
         parameter SLV0_OSTDREQ_SIZE = 1,
         parameter SLV0_KEEP_BASE_ADDR = 0,
-
-        ///////////////////////////////////////////////////////////////////////
+        //--------------------------------------------------------------------
         // Slave 1 configuration
-        ///////////////////////////////////////////////////////////////////////
-
+        //--------------------------------------------------------------------
         parameter SLV1_CDC = 0,
         parameter SLV1_START_ADDR = 4096,
         parameter SLV1_END_ADDR = 8191,
         parameter SLV1_OSTDREQ_NUM = 4,
         parameter SLV1_OSTDREQ_SIZE = 1,
         parameter SLV1_KEEP_BASE_ADDR = 0,
-
-        ///////////////////////////////////////////////////////////////////////
+        //--------------------------------------------------------------------
         // Slave 2 configuration
-        ///////////////////////////////////////////////////////////////////////
-
+        //--------------------------------------------------------------------
         parameter SLV2_CDC = 0,
         parameter SLV2_START_ADDR = 8192,
         parameter SLV2_END_ADDR = 12287,
         parameter SLV2_OSTDREQ_NUM = 4,
         parameter SLV2_OSTDREQ_SIZE = 1,
         parameter SLV2_KEEP_BASE_ADDR = 0,
-
-        ///////////////////////////////////////////////////////////////////////
+        //--------------------------------------------------------------------
         // Slave 3 configuration
-        ///////////////////////////////////////////////////////////////////////
-
+        //--------------------------------------------------------------------
         parameter SLV3_CDC = 0,
         parameter SLV3_START_ADDR = 12288,
         parameter SLV3_END_ADDR = 16383,
@@ -216,18 +158,16 @@ module axicb_crossbar_top
         parameter SLV3_OSTDREQ_SIZE = 1,
         parameter SLV3_KEEP_BASE_ADDR = 0
     )(
-        ///////////////////////////////////////////////////////////////////////
+        //--------------------------------------------------------------------
         // Interconnect global interface
-        ///////////////////////////////////////////////////////////////////////
-
+        //--------------------------------------------------------------------
         input  wire                       aclk,
         input  wire                       aresetn,
         input  wire                       srst,
 
-        ///////////////////////////////////////////////////////////////////////
+        //--------------------------------------------------------------------
         // Master Agent 0 interface
-        ///////////////////////////////////////////////////////////////////////
-
+        //--------------------------------------------------------------------
         input  wire                       slv0_aclk,
         input  wire                       slv0_aresetn,
         input  wire                       slv0_srst,
@@ -275,11 +215,9 @@ module axicb_crossbar_top
         output logic [AXI_DATA_W    -1:0] slv0_rdata,
         output logic                      slv0_rlast,
         output logic [AXI_RUSER_W   -1:0] slv0_ruser,
-
-        ///////////////////////////////////////////////////////////////////////
+        //--------------------------------------------------------------------
         // Master Agent 1 interface
-        ///////////////////////////////////////////////////////////////////////
-
+        //--------------------------------------------------------------------
         input  wire                       slv1_aclk,
         input  wire                       slv1_aresetn,
         input  wire                       slv1_srst,
@@ -328,10 +266,9 @@ module axicb_crossbar_top
         output logic                      slv1_rlast,
         output logic [AXI_RUSER_W   -1:0] slv1_ruser,
 
-        ///////////////////////////////////////////////////////////////////////
+        //--------------------------------------------------------------------
         // Master Agent 2 interface
-        ///////////////////////////////////////////////////////////////////////
-
+        //--------------------------------------------------------------------
         input  wire                       slv2_aclk,
         input  wire                       slv2_aresetn,
         input  wire                       slv2_srst,
@@ -380,10 +317,9 @@ module axicb_crossbar_top
         output logic                      slv2_rlast,
         output logic [AXI_RUSER_W   -1:0] slv2_ruser,
 
-        ///////////////////////////////////////////////////////////////////////
+        //--------------------------------------------------------------------
         // Master Agent 3 interface
-        ///////////////////////////////////////////////////////////////////////
-
+        //--------------------------------------------------------------------
         input  wire                       slv3_aclk,
         input  wire                       slv3_aresetn,
         input  wire                       slv3_srst,
@@ -431,11 +367,9 @@ module axicb_crossbar_top
         output logic [AXI_DATA_W    -1:0] slv3_rdata,
         output logic                      slv3_rlast,
         output logic [AXI_RUSER_W   -1:0] slv3_ruser,
-
-        ///////////////////////////////////////////////////////////////////////
+        //--------------------------------------------------------------------
         // Slave Agent 0 interface
-        ///////////////////////////////////////////////////////////////////////
-
+        //--------------------------------------------------------------------
         input  wire                       mst0_aclk,
         input  wire                       mst0_aresetn,
         input  wire                       mst0_srst,
@@ -484,10 +418,9 @@ module axicb_crossbar_top
         input  wire                       mst0_rlast,
         input  wire  [AXI_RUSER_W   -1:0] mst0_ruser,
 
-        ///////////////////////////////////////////////////////////////////////
+        //--------------------------------------------------------------------
         // Slave Agent 1 interface
-        ///////////////////////////////////////////////////////////////////////
-
+        //--------------------------------------------------------------------
         input  wire                       mst1_aclk,
         input  wire                       mst1_aresetn,
         input  wire                       mst1_srst,
@@ -536,10 +469,9 @@ module axicb_crossbar_top
         input  wire                       mst1_rlast,
         input  wire  [AXI_RUSER_W   -1:0] mst1_ruser,
 
-        ///////////////////////////////////////////////////////////////////////
+        //--------------------------------------------------------------------
         // Slave Agent 2 interface
-        ///////////////////////////////////////////////////////////////////////
-
+        //--------------------------------------------------------------------
         input  wire                       mst2_aclk,
         input  wire                       mst2_aresetn,
         input  wire                       mst2_srst,
@@ -587,11 +519,9 @@ module axicb_crossbar_top
         input  wire  [AXI_DATA_W    -1:0] mst2_rdata,
         input  wire                       mst2_rlast,
         input  wire  [AXI_RUSER_W   -1:0] mst2_ruser,
-
-        ///////////////////////////////////////////////////////////////////////
+        //--------------------------------------------------------------------
         // Slave Agent 3 interface
-        ///////////////////////////////////////////////////////////////////////
-
+        //--------------------------------------------------------------------
         input  wire                       mst3_aclk,
         input  wire                       mst3_aresetn,
         input  wire                       mst3_srst,
@@ -641,71 +571,22 @@ module axicb_crossbar_top
         input  wire  [AXI_RUSER_W   -1:0] mst3_ruser
     );
 
-
-    ///////////////////////////////////////////////////////////////////////////
-    // Parameters setup checks
-    ///////////////////////////////////////////////////////////////////////////
-
-    initial begin
-
-        `CHECKER((MST0_OSTDREQ_NUM>0 && MST0_OSTDREQ_SIZE==0),
-            "MST0 is setup with oustanding request but their size must be greater than 0");
-
-        `CHECKER((MST1_OSTDREQ_NUM>0 && MST1_OSTDREQ_SIZE==0),
-            "MST1 is setup with oustanding request but their size must be greater than 0");
-
-        `CHECKER((MST2_OSTDREQ_NUM>0 && MST2_OSTDREQ_SIZE==0),
-            "MST2 is setup with oustanding request but their size must be greater than 0");
-
-        `CHECKER((MST3_OSTDREQ_NUM>0 && MST3_OSTDREQ_SIZE==0),
-            "MST3 is setup with oustanding request but their size must be greater than 0");
-
-        `CHECKER((SLV0_OSTDREQ_NUM>0 && SLV0_OSTDREQ_SIZE==0),
-            "SLV0 is setup with oustanding request but their size must be greater than 0");
-
-        `CHECKER((SLV1_OSTDREQ_NUM>0 && SLV1_OSTDREQ_SIZE==0),
-            "SLV1 is setup with oustanding request but their size must be greater than 0");
-
-        `CHECKER((SLV2_OSTDREQ_NUM>0 && SLV2_OSTDREQ_SIZE==0),
-            "SLV2 is setup with oustanding request but their size must be greater than 0");
-
-        `CHECKER((SLV3_OSTDREQ_NUM>0 && SLV3_OSTDREQ_SIZE==0),
-            "SLV3 is setup with oustanding request but their size must be greater than 0");
-
-        `CHECKER((MST0_ID_MASK==0), "MST0 mask ID must be greater than 0");
-
-        `CHECKER((MST1_ID_MASK==0), "MST1 mask ID must be greater than 0");
-
-        `CHECKER((MST2_ID_MASK==0), "MST2 mask ID must be greater than 0");
-
-        `CHECKER((MST3_ID_MASK==0), "MST3 mask ID must be greater than 0");
-
-    end
-
-
-    ///////////////////////////////////////////////////////////////////////////
+    //--------------------------------------------------------------------
     // Local declarations
-    ///////////////////////////////////////////////////////////////////////////
+    //--------------------------------------------------------------------
 
     localparam AUSER_W = (USER_SUPPORT > 0) ? AXI_AUSER_W : 0;
-
     localparam WUSER_W = (USER_SUPPORT > 0) ? AXI_WUSER_W : 0;
-
     localparam BUSER_W = (USER_SUPPORT > 0) ? AXI_BUSER_W : 0;
-
     localparam RUSER_W = (USER_SUPPORT > 0) ? AXI_RUSER_W : 0;
 
                                              // AXI4-lite signaling
     localparam AWCH_W = (AXI_SIGNALING==0) ? AXI_ADDR_W + AXI_ID_W + 3 + AUSER_W :
                                              // AXI4 signaling
                                              AXI_ADDR_W + AXI_ID_W + 30 + AUSER_W;
-
     localparam WCH_W = AXI_DATA_W + AXI_DATA_W/8 + WUSER_W;
-
     localparam BCH_W = AXI_ID_W + 2 + BUSER_W;
-
     localparam ARCH_W = AWCH_W;
-
     localparam RCH_W = AXI_DATA_W + AXI_ID_W + 2 + RUSER_W;
 
     localparam MST_ROUTES = {MST3_ROUTES,
@@ -748,11 +629,9 @@ module axicb_crossbar_top
     logic [SLV_NB            -1:0] o_rlast;
     logic [SLV_NB*RCH_W      -1:0] o_rch;
 
-
-    ///////////////////////////////////////////////////////////////////////////
+    //--------------------------------------------------------------------
     // Slave interface 0
-    ///////////////////////////////////////////////////////////////////////////
-
+    //--------------------------------------------------------------------
     axicb_slv_if
     #(
     .AXI_ADDR_W        (AXI_ADDR_W),
@@ -846,10 +725,9 @@ module axicb_crossbar_top
     .o_rch        (i_rch[0*RCH_W+:RCH_W])
     );
 
-    ///////////////////////////////////////////////////////////////////////////
+    //--------------------------------------------------------------------
     // Slave interface 1
-    ///////////////////////////////////////////////////////////////////////////
-
+    //--------------------------------------------------------------------
     axicb_slv_if
     #(
     .AXI_ADDR_W        (AXI_ADDR_W),
@@ -943,10 +821,9 @@ module axicb_crossbar_top
     .o_rch        (i_rch[1*RCH_W+:RCH_W])
     );
 
-    ///////////////////////////////////////////////////////////////////////////
+    //--------------------------------------------------------------------
     // Slave interface 2
-    ///////////////////////////////////////////////////////////////////////////
-
+    //--------------------------------------------------------------------
     axicb_slv_if
     #(
     .AXI_ADDR_W        (AXI_ADDR_W),
@@ -1040,10 +917,9 @@ module axicb_crossbar_top
     .o_rch        (i_rch[2*RCH_W+:RCH_W])
     );
 
-    ///////////////////////////////////////////////////////////////////////////
+    //--------------------------------------------------------------------
     // Slave interface 3
-    ///////////////////////////////////////////////////////////////////////////
-
+    //--------------------------------------------------------------------
     axicb_slv_if
     #(
     .AXI_ADDR_W        (AXI_ADDR_W),
@@ -1137,10 +1013,9 @@ module axicb_crossbar_top
     .o_rch        (i_rch[3*RCH_W+:RCH_W])
     );
 
-    ///////////////////////////////////////////////////////////////////////////
+    //--------------------------------------------------------------------
     // AXI switching logic
-    ///////////////////////////////////////////////////////////////////////////
-
+    //--------------------------------------------------------------------
     axicb_switch_top
     #(
     .AXI_ADDR_W         (AXI_ADDR_W),
@@ -1216,11 +1091,9 @@ module axicb_crossbar_top
     .o_rch     (o_rch)
     );
 
-
-    ///////////////////////////////////////////////////////////////////////////
+    //--------------------------------------------------------------------
     // Master 0 interface
-    ///////////////////////////////////////////////////////////////////////////
-
+    //--------------------------------------------------------------------
     axicb_mst_if
     #(
     .AXI_ADDR_W       (AXI_ADDR_W),
@@ -1315,10 +1188,9 @@ module axicb_crossbar_top
     .o_ruser      (mst0_ruser)
     );
 
-    ///////////////////////////////////////////////////////////////////////////
+    //--------------------------------------------------------------------
     // Master 1 interface
-    ///////////////////////////////////////////////////////////////////////////
-
+    //--------------------------------------------------------------------
     axicb_mst_if
     #(
     .AXI_ADDR_W       (AXI_ADDR_W),
@@ -1413,10 +1285,9 @@ module axicb_crossbar_top
     .o_ruser      (mst1_ruser)
     );
 
-    ///////////////////////////////////////////////////////////////////////////
+    //--------------------------------------------------------------------
     // Master 2 Interface
-    ///////////////////////////////////////////////////////////////////////////
-
+    //--------------------------------------------------------------------
     axicb_mst_if
     #(
     .AXI_ADDR_W       (AXI_ADDR_W),
@@ -1511,10 +1382,9 @@ module axicb_crossbar_top
     .o_ruser      (mst2_ruser)
     );
 
-    ///////////////////////////////////////////////////////////////////////////
+    //--------------------------------------------------------------------
     // Master 3 Interface
-    ///////////////////////////////////////////////////////////////////////////
-
+    //--------------------------------------------------------------------
     axicb_mst_if
     #(
     .AXI_ADDR_W       (AXI_ADDR_W),
@@ -1611,4 +1481,3 @@ module axicb_crossbar_top
 
 endmodule
 
-`resetall
