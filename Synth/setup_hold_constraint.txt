@@ -1,4 +1,9 @@
-﻿Setup Time Specifications for Data Input Ports (From Master Agents)
+﻿
+This timing costraint corresponds to Plan 1 in clocking_constraints.txt
+
+#################################################################### SLAVE AGENTS ######################################################################################
+
+Setup Time Specifications for Data Input Ports (to Slave Agents)
 
 Data port    Clock frequency (MHz)    Setup time (ps)
 -----------------------------------------------------
@@ -8,7 +13,29 @@ slv2_wdata          50                       30
 slv3_wdata          25                       30
 
 
-Hold Time Specifications for Data Output Ports (To Slave Agents)
+Hold Time Specifications for Data Output Ports (From Slave Agents)
+
+Data port    Clock frequency (MHz)    Hold time (ps)
+-----------------------------------------------------
+slv0_rdata          200                      10
+slv1_rdata          100                      10
+slv2_rdata          50                       10
+slv3_rdata          25                       10
+
+
+#################################################################### MASTER AGENTS ######################################################################################
+
+Setup Time Specifications for Data Input Ports (to Master Agents)
+
+Data port    Clock frequency (MHz)    Setup time (ps)
+-----------------------------------------------------
+mst0_rdata          200                      30
+mst1_rdata          100                      30
+mst2_rdata          50                       30
+mst3_rdata          25                       30
+
+
+Hold Time Specifications for Data Output Ports (from Master Agents)
 
 Data port    Clock frequency (MHz)    Hold time (ps)
 -----------------------------------------------------
@@ -16,3 +43,93 @@ mst0_wdata          200                      10
 mst1_wdata          100                      10
 mst2_wdata          50                       10
 mst3_wdata          25                       10
+
+
+###################### SCRIPT LOOP THROUGH 32 BIT PORTS ##############################
+# Define clocks with their frequencies
+create_clock -name master_clk_0 -period 5 [get_ports {master_clock_0}]  ;# 200 MHz
+create_clock -name master_clk_1 -period 10 [get_ports {master_clock_1}] ;# 100 MHz
+create_clock -name master_clk_2 -period 20 [get_ports {master_clock_2}] ;# 50 MHz
+create_clock -name master_clk_3 -period 40 [get_ports {master_clock_3}] ;# 25 MHz
+
+create_clock -name slave_clk_0 -period 5 [get_ports {slave_clock_0}]    ;# 200 MHz
+create_clock -name slave_clk_1 -period 10 [get_ports {slave_clock_1}]   ;# 100 MHz
+create_clock -name slave_clk_2 -period 20 [get_ports {slave_clock_2}]   ;# 50 MHz
+create_clock -name slave_clk_3 -period 40 [get_ports {slave_clock_3}]   ;# 25 MHz
+
+# Define setup time constraints for slave write ports (input)
+for {set i 0} {$i < 32} {incr i} {
+    set_input_delay -clock slave_clk_0 -min 30 [get_ports [format "slv0_wdata[%d]" $i]]
+    set_input_delay -clock slave_clk_1 -min 30 [get_ports [format "slv1_wdata[%d]" $i]]
+    set_input_delay -clock slave_clk_2 -min 30 [get_ports [format "slv2_wdata[%d]" $i]]
+    set_input_delay -clock slave_clk_3 -min 30 [get_ports [format "slv3_wdata[%d]" $i]]
+}
+
+# Define hold time constraints for slave read ports (output)
+for {set i 0} {$i < 32} {incr i} {
+    set_output_delay -clock slave_clk_0 -min 10 [get_ports [format "slv0_rdata[%d]" $i]]
+    set_output_delay -clock slave_clk_1 -min 10 [get_ports [format "slv1_rdata[%d]" $i]]
+    set_output_delay -clock slave_clk_2 -min 10 [get_ports [format "slv2_rdata[%d]" $i]]
+    set_output_delay -clock slave_clk_3 -min 10 [get_ports [format "slv3_rdata[%d]" $i]]
+}
+
+# Define setup time constraints for master read ports (input)
+for {set i 0} {$i < 32} {incr i} {
+    set_input_delay -clock master_clk_0 -min 30 [get_ports [format "mst0_rdata[%d]" $i]]
+    set_input_delay -clock master_clk_1 -min 30 [get_ports [format "mst1_rdata[%d]" $i]]
+    set_input_delay -clock master_clk_2 -min 30 [get_ports [format "mst2_rdata[%d]" $i]]
+    set_input_delay -clock master_clk_3 -min 30 [get_ports [format "mst3_rdata[%d]" $i]]
+}
+
+# Define hold time constraints for master write ports (output)
+for {set i 0} {$i < 32} {incr i} {
+    set_output_delay -clock master_clk_0 -min 10 [get_ports [format "mst0_wdata[%d]" $i]]
+    set_output_delay -clock master_clk_1 -min 10 [get_ports [format "mst1_wdata[%d]" $i]]
+    set_output_delay -clock master_clk_2 -min 10 [get_ports [format "mst2_wdata[%d]" $i]]
+    set_output_delay -clock master_clk_3 -min 10 [get_ports [format "mst3_wdata[%d]" $i]]
+}
+
+
+###################### PRINT LOOP THROUGH 32 BIT PORTS ##############################
+
+# Define slave data ports and their corresponding setup/hold times for read and write operations
+slave_ports = {
+    'slv0': {'wdata': {'setup_time': 30}, 'rdata': {'hold_time': 10}},
+    'slv1': {'wdata': {'setup_time': 30}, 'rdata': {'hold_time': 10}},
+    'slv2': {'wdata': {'setup_time': 30}, 'rdata': {'hold_time': 10}},
+    'slv3': {'wdata': {'setup_time': 30}, 'rdata': {'hold_time': 10}}
+}
+
+# Define master data ports and their corresponding setup/hold times for read and write operations
+master_ports = {
+    'mst0': {'wdata': {'hold_time': 10}, 'rdata': {'setup_time': 30}},
+    'mst1': {'wdata': {'hold_time': 10}, 'rdata': {'setup_time': 30}},
+    'mst2': {'wdata': {'hold_time': 10}, 'rdata': {'setup_time': 30}},
+    'mst3': {'wdata': {'hold_time': 10}, 'rdata': {'setup_time': 30}}
+}
+
+# Loop through slave data ports
+for slave_port, operations in slave_ports.items():
+    print("Slave Port:", slave_port)
+
+    for operation, timing in operations.items():
+        print("Operation:", operation)
+
+        if 'setup_time' in timing:
+            print("Setup Time:", timing['setup_time'])
+        elif 'hold_time' in timing:
+            print("Hold Time:", timing['hold_time'])
+
+# Loop through master data ports
+for master_port, operations in master_ports.items():
+    print("Master Port:", master_port)
+
+    for operation, timing in operations.items():
+        print("Operation:", operation)
+
+        if 'setup_time' in timing:
+            print("Setup Time:", timing['setup_time'])
+        elif 'hold_time' in timing:
+            print("Hold Time:", timing['hold_time'])
+
+
