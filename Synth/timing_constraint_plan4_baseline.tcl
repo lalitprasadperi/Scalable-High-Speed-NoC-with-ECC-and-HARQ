@@ -1,4 +1,18 @@
-# Define clocks with their frequencies for Clock Plan #4 for Base Logic Design
+//-----------------------------------------------------------------------------------
+// # Author: Alberta Ogbo Dadeboe (albertaod@vt.edu)
+// # Group5 Project: Advance VLSI Design, ECE5545 Spring2024 
+//-----------------------------------------------------------------------------------
+// # distributed under the mit license
+// # https://opensource.org/licenses/mit-license.php
+//-----------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------
+// # Defining timing constraints for Clock Plan #1 for basic logic design : 
+// # Clock Frequencies in MHz (Global/M/S 0 - M/S 1 - M/S#2 - M/S 3): 200-100-50-25
+// # Setup time for input ports - 30ps
+// # Hold time for output ports - 10ps
+//-----------------------------------------------------------------------------------
+
 create_clock -name master_clk_0 -period 1.25 [get_ports {mst0_aclk}]  ;# 800 MHz
 create_clock -name master_clk_1 -period 2.5 [get_ports {mst1_aclk}] ;# 400 MHz
 create_clock -name master_clk_2 -period 5 [get_ports {mst2_aclk}] ;# 200 MHz 
