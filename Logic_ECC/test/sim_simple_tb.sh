@@ -6,6 +6,7 @@ rm -rf INCA_libs
 ncverilog \
 -disable_sem2009 \
 ../rtl/ecc_secded.sv \
+../rtl/ecc_encode.sv \
 ../rtl/axicb_scfifo_ram.sv \
 ../rtl/axicb_scfifo.sv \
 ../rtl/axicb_pipeline.sv \
@@ -20,6 +21,6 @@ ncverilog \
 ../rtl/axicb_crossbar_top.sv \
 simple_tb.v \
 +nctimescale+1ns/1ns \
-+access+r 
-#+gui
++access+r \
++gui
 

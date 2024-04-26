@@ -1,8 +1,9 @@
 ncverilog(64): 15.20-s073: (c) Copyright 1995-2019 Cadence Design Systems, Inc.
-TOOL:	ncverilog	15.20-s073: Started on Apr 25, 2024 at 22:14:18 EDT
+TOOL:	ncverilog	15.20-s073: Started on Apr 25, 2024 at 22:46:39 EDT
 ncverilog
 	-disable_sem2009
 	../rtl/ecc_secded.sv
+	../rtl/ecc_encode.sv
 	../rtl/axicb_scfifo_ram.sv
 	../rtl/axicb_scfifo.sv
 	../rtl/axicb_pipeline.sv
@@ -18,8 +19,12 @@ ncverilog
 	simple_tb.v
 	+nctimescale+1ns/1ns
 	+access+r
+	+gui
 file: ../rtl/ecc_secded.sv
 	module worklib.ecc_secded:sv
+		errors: 0, warnings: 0
+file: ../rtl/ecc_encode.sv
+	module worklib.ecc_encode:sv
 		errors: 0, warnings: 0
 file: ../rtl/axicb_scfifo_ram.sv
 	module worklib.axicb_scfifo_ram:sv
@@ -498,12 +503,14 @@ ncelab: *W,BNDWRN (../rtl/ecc_secded.sv,43|10): Bit-select or part-select index 
 			streams:   3, words:  2164
 		worklib.axicb_scfifo_ram:sv <0x64ae8481>
 			streams:   3, words:  2034
-		worklib.axicb_slv_if:sv <0x081f7b73>
+		worklib.axicb_slv_if:sv <0x02baa263>
 			streams:  33, words:  8496
 		worklib.axicb_slv_switch:sv <0x2da79a13>
 			streams:  59, words: 28262
 		worklib.axicb_switch_top:sv <0x6af0c371>
 			streams: 307, words: 93402
+		worklib.ecc_encode:sv <0x7133feba>
+			streams:   4, words:  3457
 		worklib.ecc_secded:sv <0x78a5f0f2>
 			streams:  11, words:  9238
 		worklib.testbench:v <0x50f25912>
@@ -512,27 +519,21 @@ ncelab: *W,BNDWRN (../rtl/ecc_secded.sv,43|10): Bit-select or part-select index 
 	Loading native compiled code:     .................... Done
 	Design hierarchy summary:
 		                  Instances  Unique
-		Modules:                208      14
-		Registers:             2356     669
-		Scalar wires:          2601       -
+		Modules:                212      15
+		Registers:             2364     671
+		Scalar wires:          2641       -
 		Expanded wires:         204      14
-		Vectored wires:        1761       -
-		Always blocks:          229      17
+		Vectored wires:        1765       -
+		Always blocks:          233      18
 		Initial blocks:         101      14
-		Cont. assignments:     1184     295
+		Cont. assignments:     1188     303
 		Pseudo assignments:    1402     901
 		Simulation timescale:   1ns
 	Writing initial simulation snapshot: worklib.testbench:v
-Loading snapshot worklib.testbench:v .................... Done
+
+-------------------------------------
+Relinquished control to SimVision...
+ncsim> 
 ncsim> source /software/cadence/installs/INCISIVE152/tools/inca/files/ncsimrc
-ncsim> run
---------------Start of Simulation-------------
-
- NOC: Compile /Elaboration: PASS
-
---------------End of Simulation-------------
-
-Simulation complete via $finish(1) at time 10 US + 0
-./simple_tb.v:32   $finish;
 ncsim> exit
-TOOL:	ncverilog	15.20-s073: Exiting on Apr 25, 2024 at 22:14:19 EDT  (total: 00:00:01)
+TOOL:	ncverilog	15.20-s073: Exiting on Apr 25, 2024 at 22:49:31 EDT  (total: 00:02:52)

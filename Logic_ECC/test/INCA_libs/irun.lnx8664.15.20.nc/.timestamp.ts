@@ -3,7 +3,8 @@
 1713991961 /home/lalitprasad/ECE5545/AXI_NOC/Logic_ECC/rtl/axicb_crossbar_top.sv
 1713991002 /home/lalitprasad/ECE5545/AXI_NOC/Logic_ECC/rtl/axicb_pipeline.sv
 1713991002 /home/lalitprasad/ECE5545/AXI_NOC/Logic_ECC/rtl/axicb_scfifo.sv
-1713991002 /home/lalitprasad/ECE5545/AXI_NOC/Logic_ECC/rtl/axicb_slv_if.sv
+1714099039 /home/lalitprasad/ECE5545/AXI_NOC/Logic_ECC/rtl/axicb_slv_if.sv
+1714099289 /home/lalitprasad/ECE5545/AXI_NOC/Logic_ECC/rtl/ecc_encode.sv
 1713991002 /home/lalitprasad/ECE5545/AXI_NOC/Logic_ECC/rtl/axicb_mst_switch.sv
 1713991930 /home/lalitprasad/ECE5545/AXI_NOC/Logic_ECC/rtl/axicb_crossbar.sv
 1713991002 /home/lalitprasad/ECE5545/AXI_NOC/Logic_ECC/rtl/axicb_round_robin_core.sv

@@ -3,6 +3,7 @@
 // Do not modify this file
 //
 /home/lalitprasad/ECE5545/AXI_NOC/Logic_ECC/rtl/ecc_secded.sv
+/home/lalitprasad/ECE5545/AXI_NOC/Logic_ECC/rtl/ecc_encode.sv
 /home/lalitprasad/ECE5545/AXI_NOC/Logic_ECC/rtl/axicb_scfifo_ram.sv
 /home/lalitprasad/ECE5545/AXI_NOC/Logic_ECC/rtl/axicb_scfifo.sv
 /home/lalitprasad/ECE5545/AXI_NOC/Logic_ECC/rtl/axicb_pipeline.sv

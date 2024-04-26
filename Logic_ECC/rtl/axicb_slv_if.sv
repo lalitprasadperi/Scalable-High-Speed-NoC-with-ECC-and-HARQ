@@ -133,6 +133,8 @@ module axicb_slv_if
     logic [RCH_W         -1:0] rch;
     logic                      wlast;
 
+     wire [39:0] i_wdata_w;
+     wire        i_wvalid_w;
 
     ///////////////////////////////////////////////////////////////////////////////
     // Write/Read Address Channel preparation
@@ -240,9 +242,9 @@ module axicb_slv_if
 
     generate
         if (USER_SUPPORT>0 && AXI_WUSER_W>0) begin: WUSER_ON
-            assign wch = {i_wuser, i_wstrb, i_wdata};
+            assign wch = {i_wuser, i_wstrb, i_wdata_w};
         end else begin: WUSER_OFF
-            assign wch = {i_wstrb, i_wdata};
+            assign wch = {i_wstrb, i_wdata_w};
         end
     endgenerate
 
@@ -319,6 +321,7 @@ module axicb_slv_if
     logic r_rinc;
     logic r_empty;
 
+
     ///////////////////////////////////////////////////////////////////////////
     // Write Address Channel
     ///////////////////////////////////////////////////////////////////////////
@@ -378,7 +381,7 @@ module axicb_slv_if
     );
 
     assign i_wready = ~w_full;
-    assign w_winc = i_wvalid & ~w_full;
+    assign w_winc = i_wvalid_w & ~w_full;
 
     assign o_wvalid = ~w_empty;
     assign w_rinc = ~w_empty & o_wready;
@@ -548,7 +551,7 @@ module axicb_slv_if
     .srst     (i_srst),
     .flush    (1'b0),
     .data_in  ({wlast, wch}),
-    .push     (i_wvalid),
+    .push     (i_wvalid_w),
     .full     (w_full),
     .data_out ({o_wlast, o_wch}),
     .pull     (o_wready),
@@ -650,7 +653,7 @@ module axicb_slv_if
 
     assign o_awch = awch;
 
-    assign o_wvalid = i_wvalid;
+    assign o_wvalid = i_wvalid_w;
     assign i_wready = o_wready;
     assign o_wlast = wlast;
 
@@ -675,6 +678,19 @@ module axicb_slv_if
     end
 
     endgenerate
+
+// ECC Embedd Logic
+ ecc_encode ecc_encode
+  (
+       .i_aclk       (i_aclk),
+       .i_aresetn    (i_aresetn) ,
+       .i_enable_ecc (1'b1),
+       .i_wvalid     (i_wvalid),
+       .i_wdata      (i_wdata),
+       .o_wvalid     (i_wvalid_w),
+       .o_wdata      (i_wdata_w)
+  );
+
 
 endmodule
 

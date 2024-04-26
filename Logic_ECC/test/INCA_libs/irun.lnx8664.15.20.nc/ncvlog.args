@@ -6,6 +6,7 @@
 ./INCA_libs/irun.lnx8664.15.20.nc
 -RUNMODE
 ../rtl/ecc_secded.sv
+../rtl/ecc_encode.sv
 ../rtl/axicb_scfifo_ram.sv
 ../rtl/axicb_scfifo.sv
 ../rtl/axicb_pipeline.sv

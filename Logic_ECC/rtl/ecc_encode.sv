@@ -15,21 +15,24 @@ module ecc_encode
         input wire [39:0]   i_wdata,
 
         output logic        o_wvalid,
-        output logic [39:0] o_wdata,
+        output logic [39:0] o_wdata
 
     );
 
-wire r_eccdata[7:0]
+wire [7:0] r_eccdata;
 
 always_ff@(posedge i_aclk or negedge i_aresetn)
 begin
 if(!i_aresetn)
+  begin	
   o_wvalid      <= 1'b0;
   o_wdata[39:0] <= 40'b0; 
+  end
 else
+  begin	
   o_wvalid       <= i_wvalid;
-  o_wdata[31:0]  <= i_wdata[31:0]; 
-  o_wdata[39:32] <= r_eccdata[7:0]; 
+  o_wdata[39:0]  <= {r_eccdata[7:0], i_wdata[31:0]}; 
+  end
 end
 
 

@@ -1,12 +1,13 @@
 1713991002 /home/lalitprasad/ECE5545/AXI_NOC/Logic_ECC/test/cds.lib
 1714097652 /home/lalitprasad/ECE5545/AXI_NOC/Logic_ECC/rtl/ecc_secded.sv
+1714099289 /home/lalitprasad/ECE5545/AXI_NOC/Logic_ECC/rtl/ecc_encode.sv
 1713991002 /home/lalitprasad/ECE5545/AXI_NOC/Logic_ECC/rtl/axicb_scfifo_ram.sv
 1713991002 /home/lalitprasad/ECE5545/AXI_NOC/Logic_ECC/rtl/axicb_scfifo.sv
 1713991002 /home/lalitprasad/ECE5545/AXI_NOC/Logic_ECC/rtl/axicb_pipeline.sv
 1713991002 /home/lalitprasad/ECE5545/AXI_NOC/Logic_ECC/rtl/axicb_round_robin_core.sv
 1713991002 /home/lalitprasad/ECE5545/AXI_NOC/Logic_ECC/rtl/axicb_round_robin.sv
 1714096394 /home/lalitprasad/ECE5545/AXI_NOC/Logic_ECC/rtl/axicb_mst_if.sv
-1713991002 /home/lalitprasad/ECE5545/AXI_NOC/Logic_ECC/rtl/axicb_slv_if.sv
+1714099039 /home/lalitprasad/ECE5545/AXI_NOC/Logic_ECC/rtl/axicb_slv_if.sv
 1713991002 /home/lalitprasad/ECE5545/AXI_NOC/Logic_ECC/rtl/axicb_mst_switch.sv
 1713991002 /home/lalitprasad/ECE5545/AXI_NOC/Logic_ECC/rtl/axicb_slv_switch.sv
 1713991002 /home/lalitprasad/ECE5545/AXI_NOC/Logic_ECC/rtl/axicb_switch_top.sv
