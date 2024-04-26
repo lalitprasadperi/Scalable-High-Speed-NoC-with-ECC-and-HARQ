@@ -1,0 +1,936 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Fri Apr 26 11:16:36 2024
+# Process ID: 2024
+# Current directory: C:/Users/hp/axi_baseline_1/axi_baseline_1.runs/synth_1
+# Command line: vivado.exe -log axicb_crossbar_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source axicb_crossbar_top.tcl
+# Log file: C:/Users/hp/axi_baseline_1/axi_baseline_1.runs/synth_1/axicb_crossbar_top.vds
+# Journal file: C:/Users/hp/axi_baseline_1/axi_baseline_1.runs/synth_1\vivado.jou
+# Running On: albie-01, OS: Windows, CPU Frequency: 2096 MHz, CPU Physical cores: 4, Host memory: 7458 MB
+#-----------------------------------------------------------
+source axicb_crossbar_top.tcl -notrace
+create_project: Time (s): cpu = 00:00:17 ; elapsed = 00:00:26 . Memory (MB): peak = 469.801 ; gain = 184.844
+Command: synth_design -top axicb_crossbar_top -part xc7z007sclg225-2
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z007s'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z007s'
+INFO: [Device 21-403] Loading part xc7z007sclg225-2
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 1284
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1304.137 ; gain = 439.457
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'axicb_crossbar_top' [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_crossbar_top.sv:15]
+INFO: [Synth 8-6157] synthesizing module 'axicb_crossbar' [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_crossbar.sv:13]
+	Parameter AXI_ADDR_W bound to: 16 - type: integer 
+	Parameter AXI_ID_W bound to: 8 - type: integer 
+	Parameter AXI_DATA_W bound to: 32 - type: integer 
+	Parameter MST_NB bound to: 4 - type: integer 
+	Parameter SLV_NB bound to: 4 - type: integer 
+	Parameter MST_PIPELINE bound to: 0 - type: integer 
+	Parameter SLV_PIPELINE bound to: 0 - type: integer 
+	Parameter STRB_MODE bound to: 1 - type: integer 
+	Parameter AXI_SIGNALING bound to: 0 - type: integer 
+	Parameter USER_SUPPORT bound to: 0 - type: integer 
+	Parameter AXI_AUSER_W bound to: 1 - type: integer 
+	Parameter AXI_WUSER_W bound to: 1 - type: integer 
+	Parameter AXI_BUSER_W bound to: 1 - type: integer 
+	Parameter AXI_RUSER_W bound to: 1 - type: integer 
+	Parameter TIMEOUT_VALUE bound to: 10000 - type: integer 
+	Parameter TIMEOUT_ENABLE bound to: 1 - type: integer 
+	Parameter MST0_CDC bound to: 0 - type: integer 
+	Parameter MST0_OSTDREQ_NUM bound to: 4 - type: integer 
+	Parameter MST0_OSTDREQ_SIZE bound to: 1 - type: integer 
+	Parameter MST0_PRIORITY bound to: 0 - type: integer 
+	Parameter MST0_ROUTES bound to: 4'b1111 
+	Parameter MST0_ID_MASK bound to: 8'b00010000 
+	Parameter MST0_RW bound to: 0 - type: integer 
+	Parameter MST1_CDC bound to: 0 - type: integer 
+	Parameter MST1_OSTDREQ_NUM bound to: 4 - type: integer 
+	Parameter MST1_OSTDREQ_SIZE bound to: 1 - type: integer 
+	Parameter MST1_PRIORITY bound to: 0 - type: integer 
+	Parameter MST1_ROUTES bound to: 4'b1111 
+	Parameter MST1_ID_MASK bound to: 8'b00100000 
+	Parameter MST1_RW bound to: 0 - type: integer 
+	Parameter MST2_CDC bound to: 0 - type: integer 
+	Parameter MST2_OSTDREQ_NUM bound to: 4 - type: integer 
+	Parameter MST2_OSTDREQ_SIZE bound to: 1 - type: integer 
+	Parameter MST2_PRIORITY bound to: 0 - type: integer 
+	Parameter MST2_ROUTES bound to: 4'b1111 
+	Parameter MST2_ID_MASK bound to: 8'b00110000 
+	Parameter MST2_RW bound to: 0 - type: integer 
+	Parameter MST3_CDC bound to: 0 - type: integer 
+	Parameter MST3_OSTDREQ_NUM bound to: 4 - type: integer 
+	Parameter MST3_OSTDREQ_SIZE bound to: 1 - type: integer 
+	Parameter MST3_PRIORITY bound to: 0 - type: integer 
+	Parameter MST3_ROUTES bound to: 4'b1111 
+	Parameter MST3_ID_MASK bound to: 8'b01000000 
+	Parameter MST3_RW bound to: 0 - type: integer 
+	Parameter SLV0_CDC bound to: 0 - type: integer 
+	Parameter SLV0_START_ADDR bound to: 0 - type: integer 
+	Parameter SLV0_END_ADDR bound to: 4095 - type: integer 
+	Parameter SLV0_OSTDREQ_NUM bound to: 4 - type: integer 
+	Parameter SLV0_OSTDREQ_SIZE bound to: 1 - type: integer 
+	Parameter SLV0_KEEP_BASE_ADDR bound to: 0 - type: integer 
+	Parameter SLV1_CDC bound to: 0 - type: integer 
+	Parameter SLV1_START_ADDR bound to: 4096 - type: integer 
+	Parameter SLV1_END_ADDR bound to: 8191 - type: integer 
+	Parameter SLV1_OSTDREQ_NUM bound to: 4 - type: integer 
+	Parameter SLV1_OSTDREQ_SIZE bound to: 1 - type: integer 
+	Parameter SLV1_KEEP_BASE_ADDR bound to: 0 - type: integer 
+	Parameter SLV2_CDC bound to: 0 - type: integer 
+	Parameter SLV2_START_ADDR bound to: 8192 - type: integer 
+	Parameter SLV2_END_ADDR bound to: 12287 - type: integer 
+	Parameter SLV2_OSTDREQ_NUM bound to: 4 - type: integer 
+	Parameter SLV2_OSTDREQ_SIZE bound to: 1 - type: integer 
+	Parameter SLV2_KEEP_BASE_ADDR bound to: 0 - type: integer 
+	Parameter SLV3_CDC bound to: 0 - type: integer 
+	Parameter SLV3_START_ADDR bound to: 12288 - type: integer 
+	Parameter SLV3_END_ADDR bound to: 16383 - type: integer 
+	Parameter SLV3_OSTDREQ_NUM bound to: 4 - type: integer 
+	Parameter SLV3_OSTDREQ_SIZE bound to: 1 - type: integer 
+	Parameter SLV3_KEEP_BASE_ADDR bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'axicb_slv_if' [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_slv_if.sv:8]
+	Parameter AXI_ADDR_W bound to: 16 - type: integer 
+	Parameter AXI_ID_W bound to: 8 - type: integer 
+	Parameter AXI_DATA_W bound to: 32 - type: integer 
+	Parameter SLV_NB bound to: 4 - type: integer 
+	Parameter STRB_MODE bound to: 1 - type: integer 
+	Parameter AXI_SIGNALING bound to: 0 - type: integer 
+	Parameter MST_CDC bound to: 0 - type: integer 
+	Parameter MST_OSTDREQ_NUM bound to: 4 - type: integer 
+	Parameter MST_OSTDREQ_SIZE bound to: 1 - type: integer 
+	Parameter USER_SUPPORT bound to: 0 - type: integer 
+	Parameter AXI_AUSER_W bound to: 1 - type: integer 
+	Parameter AXI_WUSER_W bound to: 1 - type: integer 
+	Parameter AXI_BUSER_W bound to: 1 - type: integer 
+	Parameter AXI_RUSER_W bound to: 1 - type: integer 
+	Parameter AWCH_W bound to: 27 - type: integer 
+	Parameter WCH_W bound to: 36 - type: integer 
+	Parameter BCH_W bound to: 10 - type: integer 
+	Parameter ARCH_W bound to: 27 - type: integer 
+	Parameter RCH_W bound to: 42 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'axicb_scfifo' [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_scfifo.sv:26]
+	Parameter PASS_THRU bound to: 0 - type: integer 
+	Parameter ADDR_WIDTH bound to: 2 - type: integer 
+	Parameter DATA_WIDTH bound to: 27 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'axicb_scfifo_ram' [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_scfifo_ram.sv:9]
+	Parameter ADDR_WIDTH bound to: 2 - type: integer 
+	Parameter DATA_WIDTH bound to: 27 - type: integer 
+	Parameter FFD_EN bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axicb_scfifo_ram' (0#1) [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_scfifo_ram.sv:9]
+INFO: [Synth 8-6155] done synthesizing module 'axicb_scfifo' (0#1) [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_scfifo.sv:26]
+INFO: [Synth 8-6157] synthesizing module 'axicb_scfifo__parameterized0' [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_scfifo.sv:26]
+	Parameter PASS_THRU bound to: 0 - type: integer 
+	Parameter ADDR_WIDTH bound to: 2 - type: integer 
+	Parameter DATA_WIDTH bound to: 37 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'axicb_scfifo_ram__parameterized0' [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_scfifo_ram.sv:9]
+	Parameter ADDR_WIDTH bound to: 2 - type: integer 
+	Parameter DATA_WIDTH bound to: 37 - type: integer 
+	Parameter FFD_EN bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axicb_scfifo_ram__parameterized0' (0#1) [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_scfifo_ram.sv:9]
+INFO: [Synth 8-6155] done synthesizing module 'axicb_scfifo__parameterized0' (0#1) [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_scfifo.sv:26]
+INFO: [Synth 8-6157] synthesizing module 'axicb_scfifo__parameterized1' [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_scfifo.sv:26]
+	Parameter PASS_THRU bound to: 0 - type: integer 
+	Parameter ADDR_WIDTH bound to: 2 - type: integer 
+	Parameter DATA_WIDTH bound to: 10 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'axicb_scfifo_ram__parameterized1' [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_scfifo_ram.sv:9]
+	Parameter ADDR_WIDTH bound to: 2 - type: integer 
+	Parameter DATA_WIDTH bound to: 10 - type: integer 
+	Parameter FFD_EN bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axicb_scfifo_ram__parameterized1' (0#1) [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_scfifo_ram.sv:9]
+INFO: [Synth 8-6155] done synthesizing module 'axicb_scfifo__parameterized1' (0#1) [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_scfifo.sv:26]
+INFO: [Synth 8-6157] synthesizing module 'axicb_scfifo__parameterized2' [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_scfifo.sv:26]
+	Parameter PASS_THRU bound to: 0 - type: integer 
+	Parameter ADDR_WIDTH bound to: 2 - type: integer 
+	Parameter DATA_WIDTH bound to: 43 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'axicb_scfifo_ram__parameterized2' [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_scfifo_ram.sv:9]
+	Parameter ADDR_WIDTH bound to: 2 - type: integer 
+	Parameter DATA_WIDTH bound to: 43 - type: integer 
+	Parameter FFD_EN bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axicb_scfifo_ram__parameterized2' (0#1) [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_scfifo_ram.sv:9]
+INFO: [Synth 8-6155] done synthesizing module 'axicb_scfifo__parameterized2' (0#1) [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_scfifo.sv:26]
+INFO: [Synth 8-6155] done synthesizing module 'axicb_slv_if' (0#1) [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_slv_if.sv:8]
+INFO: [Synth 8-6157] synthesizing module 'axicb_switch_top' [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_switch_top.sv:8]
+	Parameter AXI_ADDR_W bound to: 16 - type: integer 
+	Parameter AXI_ID_W bound to: 8 - type: integer 
+	Parameter AXI_DATA_W bound to: 32 - type: integer 
+	Parameter AXI_SIGNALING bound to: 0 - type: integer 
+	Parameter MST_NB bound to: 4 - type: integer 
+	Parameter SLV_NB bound to: 4 - type: integer 
+	Parameter MST_PIPELINE bound to: 0 - type: integer 
+	Parameter SLV_PIPELINE bound to: 0 - type: integer 
+	Parameter TIMEOUT_ENABLE bound to: 1 - type: integer 
+	Parameter MST_ROUTES bound to: 16'b1111111111111111 
+	Parameter MST0_ID_MASK bound to: 8'b00010000 
+	Parameter MST1_ID_MASK bound to: 8'b00100000 
+	Parameter MST2_ID_MASK bound to: 8'b00110000 
+	Parameter MST3_ID_MASK bound to: 8'b01000000 
+	Parameter MST0_PRIORITY bound to: 0 - type: integer 
+	Parameter MST1_PRIORITY bound to: 0 - type: integer 
+	Parameter MST2_PRIORITY bound to: 0 - type: integer 
+	Parameter MST3_PRIORITY bound to: 0 - type: integer 
+	Parameter SLV0_START_ADDR bound to: 0 - type: integer 
+	Parameter SLV0_END_ADDR bound to: 4095 - type: integer 
+	Parameter SLV1_START_ADDR bound to: 4096 - type: integer 
+	Parameter SLV1_END_ADDR bound to: 8191 - type: integer 
+	Parameter SLV2_START_ADDR bound to: 8192 - type: integer 
+	Parameter SLV2_END_ADDR bound to: 12287 - type: integer 
+	Parameter SLV3_START_ADDR bound to: 12288 - type: integer 
+	Parameter SLV3_END_ADDR bound to: 16383 - type: integer 
+	Parameter AWCH_W bound to: 27 - type: integer 
+	Parameter WCH_W bound to: 36 - type: integer 
+	Parameter BCH_W bound to: 10 - type: integer 
+	Parameter ARCH_W bound to: 27 - type: integer 
+	Parameter RCH_W bound to: 42 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'axicb_pipeline' [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_pipeline.sv:8]
+	Parameter DATA_BUS_W bound to: 27 - type: integer 
+	Parameter NB_PIPELINE bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axicb_pipeline' (0#1) [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_pipeline.sv:8]
+INFO: [Synth 8-6157] synthesizing module 'axicb_pipeline__parameterized0' [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_pipeline.sv:8]
+	Parameter DATA_BUS_W bound to: 37 - type: integer 
+	Parameter NB_PIPELINE bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axicb_pipeline__parameterized0' (0#1) [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_pipeline.sv:8]
+INFO: [Synth 8-6157] synthesizing module 'axicb_pipeline__parameterized1' [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_pipeline.sv:8]
+	Parameter DATA_BUS_W bound to: 10 - type: integer 
+	Parameter NB_PIPELINE bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axicb_pipeline__parameterized1' (0#1) [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_pipeline.sv:8]
+INFO: [Synth 8-6157] synthesizing module 'axicb_pipeline__parameterized2' [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_pipeline.sv:8]
+	Parameter DATA_BUS_W bound to: 43 - type: integer 
+	Parameter NB_PIPELINE bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axicb_pipeline__parameterized2' (0#1) [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_pipeline.sv:8]
+INFO: [Synth 8-6157] synthesizing module 'axicb_slv_switch' [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_slv_switch.sv:8]
+	Parameter AXI_ADDR_W bound to: 16 - type: integer 
+	Parameter AXI_ID_W bound to: 8 - type: integer 
+	Parameter AXI_SIGNALING bound to: 0 - type: integer 
+	Parameter SLV_NB bound to: 4 - type: integer 
+	Parameter TIMEOUT_ENABLE bound to: 1 - type: integer 
+	Parameter MST_ROUTES bound to: 4'b1111 
+	Parameter SLV0_START_ADDR bound to: 0 - type: integer 
+	Parameter SLV0_END_ADDR bound to: 4095 - type: integer 
+	Parameter SLV1_START_ADDR bound to: 4096 - type: integer 
+	Parameter SLV1_END_ADDR bound to: 8191 - type: integer 
+	Parameter SLV2_START_ADDR bound to: 8192 - type: integer 
+	Parameter SLV2_END_ADDR bound to: 12287 - type: integer 
+	Parameter SLV3_START_ADDR bound to: 12288 - type: integer 
+	Parameter SLV3_END_ADDR bound to: 16383 - type: integer 
+	Parameter AWCH_W bound to: 27 - type: integer 
+	Parameter WCH_W bound to: 36 - type: integer 
+	Parameter BCH_W bound to: 10 - type: integer 
+	Parameter ARCH_W bound to: 27 - type: integer 
+	Parameter RCH_W bound to: 42 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'axicb_scfifo__parameterized3' [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_scfifo.sv:26]
+	Parameter PASS_THRU bound to: 0 - type: integer 
+	Parameter ADDR_WIDTH bound to: 8 - type: integer 
+	Parameter DATA_WIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'axicb_scfifo_ram__parameterized3' [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_scfifo_ram.sv:9]
+	Parameter ADDR_WIDTH bound to: 8 - type: integer 
+	Parameter DATA_WIDTH bound to: 4 - type: integer 
+	Parameter FFD_EN bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axicb_scfifo_ram__parameterized3' (0#1) [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_scfifo_ram.sv:9]
+INFO: [Synth 8-6155] done synthesizing module 'axicb_scfifo__parameterized3' (0#1) [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_scfifo.sv:26]
+INFO: [Synth 8-6157] synthesizing module 'axicb_scfifo__parameterized4' [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_scfifo.sv:26]
+	Parameter PASS_THRU bound to: 0 - type: integer 
+	Parameter ADDR_WIDTH bound to: 2 - type: integer 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'axicb_scfifo_ram__parameterized4' [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_scfifo_ram.sv:9]
+	Parameter ADDR_WIDTH bound to: 2 - type: integer 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter FFD_EN bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axicb_scfifo_ram__parameterized4' (0#1) [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_scfifo_ram.sv:9]
+INFO: [Synth 8-6155] done synthesizing module 'axicb_scfifo__parameterized4' (0#1) [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_scfifo.sv:26]
+INFO: [Synth 8-6157] synthesizing module 'axicb_round_robin' [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_round_robin.sv:14]
+	Parameter REQ_NB bound to: 4 - type: integer 
+	Parameter REQ0_PRIORITY bound to: 0 - type: integer 
+	Parameter REQ1_PRIORITY bound to: 0 - type: integer 
+	Parameter REQ2_PRIORITY bound to: 0 - type: integer 
+	Parameter REQ3_PRIORITY bound to: 0 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'axicb_round_robin_core' [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_round_robin_core.sv:65]
+	Parameter REQ_NB bound to: 4 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axicb_round_robin_core' (0#1) [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_round_robin_core.sv:65]
+INFO: [Synth 8-6155] done synthesizing module 'axicb_round_robin' (0#1) [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_round_robin.sv:14]
+INFO: [Synth 8-6157] synthesizing module 'axicb_scfifo__parameterized5' [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_scfifo.sv:26]
+	Parameter PASS_THRU bound to: 0 - type: integer 
+	Parameter ADDR_WIDTH bound to: 4 - type: integer 
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'axicb_scfifo_ram__parameterized5' [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_scfifo_ram.sv:9]
+	Parameter ADDR_WIDTH bound to: 4 - type: integer 
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+	Parameter FFD_EN bound to: 0 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axicb_scfifo_ram__parameterized5' (0#1) [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_scfifo_ram.sv:9]
+INFO: [Synth 8-6155] done synthesizing module 'axicb_scfifo__parameterized5' (0#1) [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_scfifo.sv:26]
+INFO: [Synth 8-6155] done synthesizing module 'axicb_slv_switch' (0#1) [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_slv_switch.sv:8]
+INFO: [Synth 8-6157] synthesizing module 'axicb_mst_switch' [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_switch.sv:8]
+	Parameter AXI_ID_W bound to: 8 - type: integer 
+	Parameter AXI_DATA_W bound to: 32 - type: integer 
+	Parameter MST_NB bound to: 4 - type: integer 
+	Parameter TIMEOUT_ENABLE bound to: 1 - type: integer 
+	Parameter MST0_ID_MASK bound to: 8'b00010000 
+	Parameter MST1_ID_MASK bound to: 8'b00100000 
+	Parameter MST2_ID_MASK bound to: 8'b00110000 
+	Parameter MST3_ID_MASK bound to: 8'b01000000 
+	Parameter MST0_PRIORITY bound to: 0 - type: integer 
+	Parameter MST1_PRIORITY bound to: 0 - type: integer 
+	Parameter MST2_PRIORITY bound to: 0 - type: integer 
+	Parameter MST3_PRIORITY bound to: 0 - type: integer 
+	Parameter AWCH_W bound to: 27 - type: integer 
+	Parameter WCH_W bound to: 36 - type: integer 
+	Parameter BCH_W bound to: 10 - type: integer 
+	Parameter ARCH_W bound to: 27 - type: integer 
+	Parameter RCH_W bound to: 42 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axicb_mst_switch' (0#1) [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_switch.sv:8]
+INFO: [Synth 8-6155] done synthesizing module 'axicb_switch_top' (0#1) [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_switch_top.sv:8]
+INFO: [Synth 8-6157] synthesizing module 'axicb_mst_if' [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:8]
+	Parameter AXI_ADDR_W bound to: 16 - type: integer 
+	Parameter AXI_ID_W bound to: 8 - type: integer 
+	Parameter AXI_DATA_W bound to: 32 - type: integer 
+	Parameter STRB_MODE bound to: 1 - type: integer 
+	Parameter AXI_SIGNALING bound to: 0 - type: integer 
+	Parameter KEEP_BASE_ADDR bound to: 0 - type: integer 
+	Parameter BASE_ADDR bound to: 0 - type: integer 
+	Parameter SLV_CDC bound to: 0 - type: integer 
+	Parameter SLV_OSTDREQ_NUM bound to: 4 - type: integer 
+	Parameter SLV_OSTDREQ_SIZE bound to: 1 - type: integer 
+	Parameter USER_SUPPORT bound to: 0 - type: integer 
+	Parameter AXI_AUSER_W bound to: 1 - type: integer 
+	Parameter AXI_WUSER_W bound to: 1 - type: integer 
+	Parameter AXI_BUSER_W bound to: 1 - type: integer 
+	Parameter AXI_RUSER_W bound to: 1 - type: integer 
+	Parameter AWCH_W bound to: 27 - type: integer 
+	Parameter WCH_W bound to: 36 - type: integer 
+	Parameter BCH_W bound to: 10 - type: integer 
+	Parameter ARCH_W bound to: 27 - type: integer 
+	Parameter RCH_W bound to: 42 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axicb_mst_if' (0#1) [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:8]
+INFO: [Synth 8-6157] synthesizing module 'axicb_mst_if__parameterized0' [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:8]
+	Parameter AXI_ADDR_W bound to: 16 - type: integer 
+	Parameter AXI_ID_W bound to: 8 - type: integer 
+	Parameter AXI_DATA_W bound to: 32 - type: integer 
+	Parameter STRB_MODE bound to: 1 - type: integer 
+	Parameter AXI_SIGNALING bound to: 0 - type: integer 
+	Parameter KEEP_BASE_ADDR bound to: 0 - type: integer 
+	Parameter BASE_ADDR bound to: 4096 - type: integer 
+	Parameter SLV_CDC bound to: 0 - type: integer 
+	Parameter SLV_OSTDREQ_NUM bound to: 4 - type: integer 
+	Parameter SLV_OSTDREQ_SIZE bound to: 1 - type: integer 
+	Parameter USER_SUPPORT bound to: 0 - type: integer 
+	Parameter AXI_AUSER_W bound to: 1 - type: integer 
+	Parameter AXI_WUSER_W bound to: 1 - type: integer 
+	Parameter AXI_BUSER_W bound to: 1 - type: integer 
+	Parameter AXI_RUSER_W bound to: 1 - type: integer 
+	Parameter AWCH_W bound to: 27 - type: integer 
+	Parameter WCH_W bound to: 36 - type: integer 
+	Parameter BCH_W bound to: 10 - type: integer 
+	Parameter ARCH_W bound to: 27 - type: integer 
+	Parameter RCH_W bound to: 42 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axicb_mst_if__parameterized0' (0#1) [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:8]
+INFO: [Synth 8-6157] synthesizing module 'axicb_mst_if__parameterized1' [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:8]
+	Parameter AXI_ADDR_W bound to: 16 - type: integer 
+	Parameter AXI_ID_W bound to: 8 - type: integer 
+	Parameter AXI_DATA_W bound to: 32 - type: integer 
+	Parameter STRB_MODE bound to: 1 - type: integer 
+	Parameter AXI_SIGNALING bound to: 0 - type: integer 
+	Parameter KEEP_BASE_ADDR bound to: 0 - type: integer 
+	Parameter BASE_ADDR bound to: 8192 - type: integer 
+	Parameter SLV_CDC bound to: 0 - type: integer 
+	Parameter SLV_OSTDREQ_NUM bound to: 4 - type: integer 
+	Parameter SLV_OSTDREQ_SIZE bound to: 1 - type: integer 
+	Parameter USER_SUPPORT bound to: 0 - type: integer 
+	Parameter AXI_AUSER_W bound to: 1 - type: integer 
+	Parameter AXI_WUSER_W bound to: 1 - type: integer 
+	Parameter AXI_BUSER_W bound to: 1 - type: integer 
+	Parameter AXI_RUSER_W bound to: 1 - type: integer 
+	Parameter AWCH_W bound to: 27 - type: integer 
+	Parameter WCH_W bound to: 36 - type: integer 
+	Parameter BCH_W bound to: 10 - type: integer 
+	Parameter ARCH_W bound to: 27 - type: integer 
+	Parameter RCH_W bound to: 42 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axicb_mst_if__parameterized1' (0#1) [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:8]
+INFO: [Synth 8-6157] synthesizing module 'axicb_mst_if__parameterized2' [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:8]
+	Parameter AXI_ADDR_W bound to: 16 - type: integer 
+	Parameter AXI_ID_W bound to: 8 - type: integer 
+	Parameter AXI_DATA_W bound to: 32 - type: integer 
+	Parameter STRB_MODE bound to: 1 - type: integer 
+	Parameter AXI_SIGNALING bound to: 0 - type: integer 
+	Parameter KEEP_BASE_ADDR bound to: 0 - type: integer 
+	Parameter BASE_ADDR bound to: 12288 - type: integer 
+	Parameter SLV_CDC bound to: 0 - type: integer 
+	Parameter SLV_OSTDREQ_NUM bound to: 4 - type: integer 
+	Parameter SLV_OSTDREQ_SIZE bound to: 1 - type: integer 
+	Parameter USER_SUPPORT bound to: 0 - type: integer 
+	Parameter AXI_AUSER_W bound to: 1 - type: integer 
+	Parameter AXI_WUSER_W bound to: 1 - type: integer 
+	Parameter AXI_BUSER_W bound to: 1 - type: integer 
+	Parameter AXI_RUSER_W bound to: 1 - type: integer 
+	Parameter AWCH_W bound to: 27 - type: integer 
+	Parameter WCH_W bound to: 36 - type: integer 
+	Parameter BCH_W bound to: 10 - type: integer 
+	Parameter ARCH_W bound to: 27 - type: integer 
+	Parameter RCH_W bound to: 42 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axicb_mst_if__parameterized2' (0#1) [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:8]
+INFO: [Synth 8-6155] done synthesizing module 'axicb_crossbar' (0#1) [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_crossbar.sv:13]
+INFO: [Synth 8-6155] done synthesizing module 'axicb_crossbar_top' (0#1) [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_crossbar_top.sv:15]
+WARNING: [Synth 8-3848] Net i_buser in module/entity axicb_slv_if does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_slv_if.sv:80]
+WARNING: [Synth 8-3848] Net i_ruser in module/entity axicb_slv_if does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_slv_if.sv:100]
+WARNING: [Synth 8-3848] Net o_awlen in module/entity axicb_mst_if does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:83]
+WARNING: [Synth 8-3848] Net o_awsize in module/entity axicb_mst_if does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:84]
+WARNING: [Synth 8-3848] Net o_awburst in module/entity axicb_mst_if does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:85]
+WARNING: [Synth 8-3848] Net o_awlock in module/entity axicb_mst_if does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:86]
+WARNING: [Synth 8-3848] Net o_awcache in module/entity axicb_mst_if does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:87]
+WARNING: [Synth 8-3848] Net o_awqos in module/entity axicb_mst_if does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:89]
+WARNING: [Synth 8-3848] Net o_awregion in module/entity axicb_mst_if does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:90]
+WARNING: [Synth 8-3848] Net o_awuser in module/entity axicb_mst_if does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:92]
+WARNING: [Synth 8-3848] Net o_wuser in module/entity axicb_mst_if does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:98]
+WARNING: [Synth 8-3848] Net o_arlen in module/entity axicb_mst_if does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:107]
+WARNING: [Synth 8-3848] Net o_arsize in module/entity axicb_mst_if does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:108]
+WARNING: [Synth 8-3848] Net o_arburst in module/entity axicb_mst_if does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:109]
+WARNING: [Synth 8-3848] Net o_arlock in module/entity axicb_mst_if does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:110]
+WARNING: [Synth 8-3848] Net o_arcache in module/entity axicb_mst_if does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:111]
+WARNING: [Synth 8-3848] Net o_arqos in module/entity axicb_mst_if does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:113]
+WARNING: [Synth 8-3848] Net o_arregion in module/entity axicb_mst_if does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:114]
+WARNING: [Synth 8-3848] Net o_aruser in module/entity axicb_mst_if does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:116]
+WARNING: [Synth 8-3848] Net o_awlen in module/entity axicb_mst_if__parameterized0 does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:83]
+WARNING: [Synth 8-3848] Net o_awsize in module/entity axicb_mst_if__parameterized0 does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:84]
+WARNING: [Synth 8-3848] Net o_awburst in module/entity axicb_mst_if__parameterized0 does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:85]
+WARNING: [Synth 8-3848] Net o_awlock in module/entity axicb_mst_if__parameterized0 does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:86]
+WARNING: [Synth 8-3848] Net o_awcache in module/entity axicb_mst_if__parameterized0 does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:87]
+WARNING: [Synth 8-3848] Net o_awqos in module/entity axicb_mst_if__parameterized0 does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:89]
+WARNING: [Synth 8-3848] Net o_awregion in module/entity axicb_mst_if__parameterized0 does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:90]
+WARNING: [Synth 8-3848] Net o_awuser in module/entity axicb_mst_if__parameterized0 does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:92]
+WARNING: [Synth 8-3848] Net o_wuser in module/entity axicb_mst_if__parameterized0 does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:98]
+WARNING: [Synth 8-3848] Net o_arlen in module/entity axicb_mst_if__parameterized0 does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:107]
+WARNING: [Synth 8-3848] Net o_arsize in module/entity axicb_mst_if__parameterized0 does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:108]
+WARNING: [Synth 8-3848] Net o_arburst in module/entity axicb_mst_if__parameterized0 does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:109]
+WARNING: [Synth 8-3848] Net o_arlock in module/entity axicb_mst_if__parameterized0 does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:110]
+WARNING: [Synth 8-3848] Net o_arcache in module/entity axicb_mst_if__parameterized0 does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:111]
+WARNING: [Synth 8-3848] Net o_arqos in module/entity axicb_mst_if__parameterized0 does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:113]
+WARNING: [Synth 8-3848] Net o_arregion in module/entity axicb_mst_if__parameterized0 does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:114]
+WARNING: [Synth 8-3848] Net o_aruser in module/entity axicb_mst_if__parameterized0 does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:116]
+WARNING: [Synth 8-3848] Net o_awlen in module/entity axicb_mst_if__parameterized1 does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:83]
+WARNING: [Synth 8-3848] Net o_awsize in module/entity axicb_mst_if__parameterized1 does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:84]
+WARNING: [Synth 8-3848] Net o_awburst in module/entity axicb_mst_if__parameterized1 does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:85]
+WARNING: [Synth 8-3848] Net o_awlock in module/entity axicb_mst_if__parameterized1 does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:86]
+WARNING: [Synth 8-3848] Net o_awcache in module/entity axicb_mst_if__parameterized1 does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:87]
+WARNING: [Synth 8-3848] Net o_awqos in module/entity axicb_mst_if__parameterized1 does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:89]
+WARNING: [Synth 8-3848] Net o_awregion in module/entity axicb_mst_if__parameterized1 does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:90]
+WARNING: [Synth 8-3848] Net o_awuser in module/entity axicb_mst_if__parameterized1 does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:92]
+WARNING: [Synth 8-3848] Net o_wuser in module/entity axicb_mst_if__parameterized1 does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:98]
+WARNING: [Synth 8-3848] Net o_arlen in module/entity axicb_mst_if__parameterized1 does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:107]
+WARNING: [Synth 8-3848] Net o_arsize in module/entity axicb_mst_if__parameterized1 does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:108]
+WARNING: [Synth 8-3848] Net o_arburst in module/entity axicb_mst_if__parameterized1 does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:109]
+WARNING: [Synth 8-3848] Net o_arlock in module/entity axicb_mst_if__parameterized1 does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:110]
+WARNING: [Synth 8-3848] Net o_arcache in module/entity axicb_mst_if__parameterized1 does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:111]
+WARNING: [Synth 8-3848] Net o_arqos in module/entity axicb_mst_if__parameterized1 does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:113]
+WARNING: [Synth 8-3848] Net o_arregion in module/entity axicb_mst_if__parameterized1 does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:114]
+WARNING: [Synth 8-3848] Net o_aruser in module/entity axicb_mst_if__parameterized1 does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:116]
+WARNING: [Synth 8-3848] Net o_awlen in module/entity axicb_mst_if__parameterized2 does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:83]
+WARNING: [Synth 8-3848] Net o_awsize in module/entity axicb_mst_if__parameterized2 does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:84]
+WARNING: [Synth 8-3848] Net o_awburst in module/entity axicb_mst_if__parameterized2 does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:85]
+WARNING: [Synth 8-3848] Net o_awlock in module/entity axicb_mst_if__parameterized2 does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:86]
+WARNING: [Synth 8-3848] Net o_awcache in module/entity axicb_mst_if__parameterized2 does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:87]
+WARNING: [Synth 8-3848] Net o_awqos in module/entity axicb_mst_if__parameterized2 does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:89]
+WARNING: [Synth 8-3848] Net o_awregion in module/entity axicb_mst_if__parameterized2 does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:90]
+WARNING: [Synth 8-3848] Net o_awuser in module/entity axicb_mst_if__parameterized2 does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:92]
+WARNING: [Synth 8-3848] Net o_wuser in module/entity axicb_mst_if__parameterized2 does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:98]
+WARNING: [Synth 8-3848] Net o_arlen in module/entity axicb_mst_if__parameterized2 does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:107]
+WARNING: [Synth 8-3848] Net o_arsize in module/entity axicb_mst_if__parameterized2 does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:108]
+WARNING: [Synth 8-3848] Net o_arburst in module/entity axicb_mst_if__parameterized2 does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:109]
+WARNING: [Synth 8-3848] Net o_arlock in module/entity axicb_mst_if__parameterized2 does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:110]
+WARNING: [Synth 8-3848] Net o_arcache in module/entity axicb_mst_if__parameterized2 does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:111]
+WARNING: [Synth 8-3848] Net o_arqos in module/entity axicb_mst_if__parameterized2 does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:113]
+WARNING: [Synth 8-3848] Net o_arregion in module/entity axicb_mst_if__parameterized2 does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:114]
+WARNING: [Synth 8-3848] Net o_aruser in module/entity axicb_mst_if__parameterized2 does not have driver. [C:/Users/hp/AXI_NOC/Logic/rtl/axicb_mst_if.sv:116]
+WARNING: [Synth 8-7129] Port o_awlen[7] in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_awlen[6] in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_awlen[5] in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_awlen[4] in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_awlen[3] in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_awlen[2] in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_awlen[1] in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_awlen[0] in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_awsize[2] in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_awsize[1] in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_awsize[0] in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_awburst[1] in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_awburst[0] in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_awlock[1] in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_awlock[0] in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_awcache[3] in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_awcache[2] in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_awcache[1] in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_awcache[0] in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_awqos[3] in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_awqos[2] in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_awqos[1] in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_awqos[0] in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_awregion[3] in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_awregion[2] in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_awregion[1] in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_awregion[0] in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_awuser[0] in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_wuser[0] in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_arlen[7] in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_arlen[6] in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_arlen[5] in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_arlen[4] in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_arlen[3] in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_arlen[2] in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_arlen[1] in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_arlen[0] in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_arsize[2] in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_arsize[1] in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_arsize[0] in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_arburst[1] in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_arburst[0] in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_arlock[1] in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_arlock[0] in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_arcache[3] in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_arcache[2] in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_arcache[1] in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_arcache[0] in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_arqos[3] in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_arqos[2] in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_arqos[1] in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_arqos[0] in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_arregion[3] in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_arregion[2] in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_arregion[1] in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_arregion[0] in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_aruser[0] in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_buser[0] in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_rlast in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_ruser[0] in module axicb_mst_if__parameterized2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_awlen[7] in module axicb_mst_if__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_awlen[6] in module axicb_mst_if__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_awlen[5] in module axicb_mst_if__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_awlen[4] in module axicb_mst_if__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_awlen[3] in module axicb_mst_if__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_awlen[2] in module axicb_mst_if__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_awlen[1] in module axicb_mst_if__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_awlen[0] in module axicb_mst_if__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_awsize[2] in module axicb_mst_if__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_awsize[1] in module axicb_mst_if__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_awsize[0] in module axicb_mst_if__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_awburst[1] in module axicb_mst_if__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_awburst[0] in module axicb_mst_if__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_awlock[1] in module axicb_mst_if__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_awlock[0] in module axicb_mst_if__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_awcache[3] in module axicb_mst_if__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_awcache[2] in module axicb_mst_if__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_awcache[1] in module axicb_mst_if__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_awcache[0] in module axicb_mst_if__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_awqos[3] in module axicb_mst_if__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_awqos[2] in module axicb_mst_if__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_awqos[1] in module axicb_mst_if__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_awqos[0] in module axicb_mst_if__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_awregion[3] in module axicb_mst_if__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_awregion[2] in module axicb_mst_if__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_awregion[1] in module axicb_mst_if__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_awregion[0] in module axicb_mst_if__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_awuser[0] in module axicb_mst_if__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_wuser[0] in module axicb_mst_if__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_arlen[7] in module axicb_mst_if__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_arlen[6] in module axicb_mst_if__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_arlen[5] in module axicb_mst_if__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_arlen[4] in module axicb_mst_if__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_arlen[3] in module axicb_mst_if__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_arlen[2] in module axicb_mst_if__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_arlen[1] in module axicb_mst_if__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_arlen[0] in module axicb_mst_if__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_arsize[2] in module axicb_mst_if__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_arsize[1] in module axicb_mst_if__parameterized1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port o_arsize[0] in module axicb_mst_if__parameterized1 is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:26 ; elapsed = 00:00:30 . Memory (MB): peak = 1426.949 ; gain = 562.270
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 1426.949 ; gain = 562.270
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 1426.949 ; gain = 562.270
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.365 . Memory (MB): peak = 1426.949 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Sourcing Tcl File [C:/Users/hp/AXI_NOC/Synth/timing_constraint_plan1_baseline.tcl]
+CRITICAL WARNING: [Common 17-1548] Command failed: invalid command name "//-----------------------------------------------------------------------------------"
+ [C:/Users/hp/AXI_NOC/Synth/timing_constraint_plan1_baseline.tcl:1]
+CRITICAL WARNING: [Common 17-1548] Command failed: invalid command name "//"
+ [C:/Users/hp/AXI_NOC/Synth/timing_constraint_plan1_baseline.tcl:2]
+CRITICAL WARNING: [Common 17-1548] Command failed: invalid command name "//"
+ [C:/Users/hp/AXI_NOC/Synth/timing_constraint_plan1_baseline.tcl:3]
+CRITICAL WARNING: [Common 17-1548] Command failed: invalid command name "//-----------------------------------------------------------------------------------"
+ [C:/Users/hp/AXI_NOC/Synth/timing_constraint_plan1_baseline.tcl:4]
+CRITICAL WARNING: [Common 17-1548] Command failed: invalid command name "//"
+ [C:/Users/hp/AXI_NOC/Synth/timing_constraint_plan1_baseline.tcl:5]
+CRITICAL WARNING: [Common 17-1548] Command failed: invalid command name "//"
+ [C:/Users/hp/AXI_NOC/Synth/timing_constraint_plan1_baseline.tcl:6]
+CRITICAL WARNING: [Common 17-1548] Command failed: invalid command name "//-----------------------------------------------------------------------------------"
+ [C:/Users/hp/AXI_NOC/Synth/timing_constraint_plan1_baseline.tcl:7]
+CRITICAL WARNING: [Common 17-1548] Command failed: invalid command name "//-----------------------------------------------------------------------------------"
+ [C:/Users/hp/AXI_NOC/Synth/timing_constraint_plan1_baseline.tcl:9]
+CRITICAL WARNING: [Common 17-1548] Command failed: invalid command name "//"
+ [C:/Users/hp/AXI_NOC/Synth/timing_constraint_plan1_baseline.tcl:10]
+CRITICAL WARNING: [Common 17-1548] Command failed: invalid command name "//"
+ [C:/Users/hp/AXI_NOC/Synth/timing_constraint_plan1_baseline.tcl:11]
+CRITICAL WARNING: [Common 17-1548] Command failed: invalid command name "//"
+ [C:/Users/hp/AXI_NOC/Synth/timing_constraint_plan1_baseline.tcl:12]
+CRITICAL WARNING: [Common 17-1548] Command failed: invalid command name "//"
+ [C:/Users/hp/AXI_NOC/Synth/timing_constraint_plan1_baseline.tcl:13]
+CRITICAL WARNING: [Common 17-1548] Command failed: invalid command name "//-----------------------------------------------------------------------------------"
+ [C:/Users/hp/AXI_NOC/Synth/timing_constraint_plan1_baseline.tcl:14]
+Finished Sourcing Tcl File [C:/Users/hp/AXI_NOC/Synth/timing_constraint_plan1_baseline.tcl]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/hp/AXI_NOC/Synth/timing_constraint_plan1_baseline.tcl]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/axicb_crossbar_top_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/axicb_crossbar_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1490.746 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.333 . Memory (MB): peak = 1490.746 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:55 ; elapsed = 00:01:00 . Memory (MB): peak = 1490.746 ; gain = 626.066
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z007sclg225-2
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:55 ; elapsed = 00:01:01 . Memory (MB): peak = 1490.746 ; gain = 626.066
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:56 ; elapsed = 00:01:02 . Memory (MB): peak = 1490.746 ; gain = 626.066
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:59 ; elapsed = 00:01:06 . Memory (MB): peak = 1490.746 ; gain = 626.066
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   16 Bit       Adders := 6     
+	   2 Input    9 Bit       Adders := 16    
+	   3 Input    9 Bit       Adders := 8     
+	   2 Input    8 Bit       Adders := 4     
+	   2 Input    5 Bit       Adders := 8     
+	   3 Input    5 Bit       Adders := 4     
+	   2 Input    3 Bit       Adders := 88    
+	   3 Input    3 Bit       Adders := 44    
++---Registers : 
+	                9 Bit    Registers := 16    
+	                8 Bit    Registers := 4     
+	                5 Bit    Registers := 8     
+	                4 Bit    Registers := 16    
+	                3 Bit    Registers := 88    
+	                1 Bit    Registers := 12    
++---Muxes : 
+	   2 Input   10 Bit        Muxes := 4     
+	   2 Input    9 Bit        Muxes := 16    
+	   2 Input    8 Bit        Muxes := 12    
+	   2 Input    5 Bit        Muxes := 8     
+	   5 Input    4 Bit        Muxes := 16    
+	  10 Input    4 Bit        Muxes := 16    
+	   2 Input    4 Bit        Muxes := 4     
+	   2 Input    3 Bit        Muxes := 88    
+	   2 Input    1 Bit        Muxes := 288   
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 66 (col length:40)
+BRAMs: 100 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:49 ; elapsed = 00:01:58 . Memory (MB): peak = 1490.746 ; gain = 626.066
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Preliminary Mapping Report (see note below)
++-------------------+----------------------------------------------------------------------+-----------+----------------------+-------------+
+|Module Name        | RTL Object                                                           | Inference | Size (Depth x Width) | Primitives  | 
++-------------------+----------------------------------------------------------------------+-----------+----------------------+-------------+
+|axicb_slv_switch:  | wch_gnt_fifo/fifo_ram/ram_reg                                        | Implied   | 256 x 4              | RAM64M x 8  | 
+|axicb_slv_switch:  | bch_mr_fifo/fifo_ram/ram_reg                                         | Implied   | 4 x 8                | RAM32M x 2  | 
+|axicb_slv_switch:  | rch_mr_fifo/fifo_ram/ram_reg                                         | Implied   | 16 x 8               | RAM32M x 3  | 
+|axicb_slv_switch:  | wch_gnt_fifo/fifo_ram/ram_reg                                        | Implied   | 256 x 4              | RAM64M x 8  | 
+|axicb_slv_switch:  | bch_mr_fifo/fifo_ram/ram_reg                                         | Implied   | 4 x 8                | RAM32M x 2  | 
+|axicb_slv_switch:  | rch_mr_fifo/fifo_ram/ram_reg                                         | Implied   | 16 x 8               | RAM32M x 3  | 
+|axicb_slv_switch:  | wch_gnt_fifo/fifo_ram/ram_reg                                        | Implied   | 256 x 4              | RAM64M x 8  | 
+|axicb_slv_switch:  | bch_mr_fifo/fifo_ram/ram_reg                                         | Implied   | 4 x 8                | RAM32M x 2  | 
+|axicb_slv_switch:  | rch_mr_fifo/fifo_ram/ram_reg                                         | Implied   | 16 x 8               | RAM32M x 3  | 
+|axicb_slv_switch:  | wch_gnt_fifo/fifo_ram/ram_reg                                        | Implied   | 256 x 4              | RAM64M x 8  | 
+|axicb_slv_switch:  | bch_mr_fifo/fifo_ram/ram_reg                                         | Implied   | 4 x 8                | RAM32M x 2  | 
+|axicb_slv_switch:  | rch_mr_fifo/fifo_ram/ram_reg                                         | Implied   | 16 x 8               | RAM32M x 3  | 
+|axicb_mst_switch:  | wch_gnt_fifo/fifo_ram/ram_reg                                        | Implied   | 256 x 4              | RAM64M x 8  | 
+|axicb_mst_switch:  | wch_gnt_fifo/fifo_ram/ram_reg                                        | Implied   | 256 x 4              | RAM64M x 8  | 
+|axicb_mst_switch:  | wch_gnt_fifo/fifo_ram/ram_reg                                        | Implied   | 256 x 4              | RAM64M x 8  | 
+|axicb_mst_switch:  | wch_gnt_fifo/fifo_ram/ram_reg                                        | Implied   | 256 x 4              | RAM64M x 8  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/slv0_if/BUFF_STAGE.aw_scfifo/fifo_ram/ram_reg | Implied   | 4 x 27               | RAM32M x 5  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/slv1_if/BUFF_STAGE.aw_scfifo/fifo_ram/ram_reg | Implied   | 4 x 27               | RAM32M x 5  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/slv2_if/BUFF_STAGE.aw_scfifo/fifo_ram/ram_reg | Implied   | 4 x 27               | RAM32M x 5  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/slv3_if/BUFF_STAGE.aw_scfifo/fifo_ram/ram_reg | Implied   | 4 x 27               | RAM32M x 5  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/slv0_if/BUFF_STAGE.w_scfifo/fifo_ram/ram_reg  | Implied   | 4 x 37               | RAM32M x 7  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/slv0_if/BUFF_STAGE.b_scfifo/fifo_ram/ram_reg  | Implied   | 4 x 10               | RAM32M x 2  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/slv0_if/BUFF_STAGE.ar_scfifo/fifo_ram/ram_reg | Implied   | 4 x 27               | RAM32M x 5  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/slv1_if/BUFF_STAGE.ar_scfifo/fifo_ram/ram_reg | Implied   | 4 x 27               | RAM32M x 5  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/slv2_if/BUFF_STAGE.ar_scfifo/fifo_ram/ram_reg | Implied   | 4 x 27               | RAM32M x 5  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/slv3_if/BUFF_STAGE.ar_scfifo/fifo_ram/ram_reg | Implied   | 4 x 27               | RAM32M x 5  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/slv0_if/BUFF_STAGE.r_scfifo/fifo_ram/ram_reg  | Implied   | 4 x 42               | RAM32M x 7  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/slv1_if/BUFF_STAGE.w_scfifo/fifo_ram/ram_reg  | Implied   | 4 x 37               | RAM32M x 7  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/slv1_if/BUFF_STAGE.b_scfifo/fifo_ram/ram_reg  | Implied   | 4 x 10               | RAM32M x 2  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/slv1_if/BUFF_STAGE.r_scfifo/fifo_ram/ram_reg  | Implied   | 4 x 42               | RAM32M x 7  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/slv2_if/BUFF_STAGE.w_scfifo/fifo_ram/ram_reg  | Implied   | 4 x 37               | RAM32M x 7  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/slv2_if/BUFF_STAGE.b_scfifo/fifo_ram/ram_reg  | Implied   | 4 x 10               | RAM32M x 2  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/slv2_if/BUFF_STAGE.r_scfifo/fifo_ram/ram_reg  | Implied   | 4 x 42               | RAM32M x 7  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/slv3_if/BUFF_STAGE.w_scfifo/fifo_ram/ram_reg  | Implied   | 4 x 37               | RAM32M x 7  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/slv3_if/BUFF_STAGE.b_scfifo/fifo_ram/ram_reg  | Implied   | 4 x 10               | RAM32M x 2  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/slv3_if/BUFF_STAGE.r_scfifo/fifo_ram/ram_reg  | Implied   | 4 x 42               | RAM32M x 7  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/mst0_if/BUFF_STAGE.aw_scfifo/fifo_ram/ram_reg | Implied   | 4 x 27               | RAM32M x 5  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/mst0_if/BUFF_STAGE.w_scfifo/fifo_ram/ram_reg  | Implied   | 4 x 36               | RAM32M x 6  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/mst0_if/BUFF_STAGE.b_scfifo/fifo_ram/ram_reg  | Implied   | 4 x 10               | RAM32M x 2  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/mst1_if/BUFF_STAGE.b_scfifo/fifo_ram/ram_reg  | Implied   | 4 x 10               | RAM32M x 2  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/mst2_if/BUFF_STAGE.b_scfifo/fifo_ram/ram_reg  | Implied   | 4 x 10               | RAM32M x 2  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/mst3_if/BUFF_STAGE.b_scfifo/fifo_ram/ram_reg  | Implied   | 4 x 10               | RAM32M x 2  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/mst0_if/BUFF_STAGE.ar_scfifo/fifo_ram/ram_reg | Implied   | 4 x 27               | RAM32M x 5  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/mst0_if/BUFF_STAGE.r_scfifo/fifo_ram/ram_reg  | Implied   | 4 x 43               | RAM32M x 8  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/mst1_if/BUFF_STAGE.aw_scfifo/fifo_ram/ram_reg | Implied   | 4 x 27               | RAM32M x 5  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/mst1_if/BUFF_STAGE.w_scfifo/fifo_ram/ram_reg  | Implied   | 4 x 36               | RAM32M x 6  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/mst1_if/BUFF_STAGE.ar_scfifo/fifo_ram/ram_reg | Implied   | 4 x 27               | RAM32M x 5  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/mst1_if/BUFF_STAGE.r_scfifo/fifo_ram/ram_reg  | Implied   | 4 x 43               | RAM32M x 8  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/mst2_if/BUFF_STAGE.aw_scfifo/fifo_ram/ram_reg | Implied   | 4 x 27               | RAM32M x 5  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/mst2_if/BUFF_STAGE.w_scfifo/fifo_ram/ram_reg  | Implied   | 4 x 36               | RAM32M x 6  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/mst2_if/BUFF_STAGE.ar_scfifo/fifo_ram/ram_reg | Implied   | 4 x 27               | RAM32M x 5  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/mst2_if/BUFF_STAGE.r_scfifo/fifo_ram/ram_reg  | Implied   | 4 x 43               | RAM32M x 8  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/mst3_if/BUFF_STAGE.aw_scfifo/fifo_ram/ram_reg | Implied   | 4 x 27               | RAM32M x 5  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/mst3_if/BUFF_STAGE.w_scfifo/fifo_ram/ram_reg  | Implied   | 4 x 36               | RAM32M x 6  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/mst3_if/BUFF_STAGE.ar_scfifo/fifo_ram/ram_reg | Implied   | 4 x 27               | RAM32M x 5  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/mst3_if/BUFF_STAGE.r_scfifo/fifo_ram/ram_reg  | Implied   | 4 x 43               | RAM32M x 8  | 
++-------------------+----------------------------------------------------------------------+-----------+----------------------+-------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:12 ; elapsed = 00:02:22 . Memory (MB): peak = 1490.746 ; gain = 626.066
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:02:25 ; elapsed = 00:02:36 . Memory (MB): peak = 1490.746 ; gain = 626.066
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping Report
++-------------------+----------------------------------------------------------------------+-----------+----------------------+-------------+
+|Module Name        | RTL Object                                                           | Inference | Size (Depth x Width) | Primitives  | 
++-------------------+----------------------------------------------------------------------+-----------+----------------------+-------------+
+|axicb_slv_switch:  | wch_gnt_fifo/fifo_ram/ram_reg                                        | Implied   | 256 x 4              | RAM64M x 8  | 
+|axicb_slv_switch:  | bch_mr_fifo/fifo_ram/ram_reg                                         | Implied   | 4 x 8                | RAM32M x 2  | 
+|axicb_slv_switch:  | rch_mr_fifo/fifo_ram/ram_reg                                         | Implied   | 16 x 8               | RAM32M x 3  | 
+|axicb_slv_switch:  | wch_gnt_fifo/fifo_ram/ram_reg                                        | Implied   | 256 x 4              | RAM64M x 8  | 
+|axicb_slv_switch:  | bch_mr_fifo/fifo_ram/ram_reg                                         | Implied   | 4 x 8                | RAM32M x 2  | 
+|axicb_slv_switch:  | rch_mr_fifo/fifo_ram/ram_reg                                         | Implied   | 16 x 8               | RAM32M x 3  | 
+|axicb_slv_switch:  | wch_gnt_fifo/fifo_ram/ram_reg                                        | Implied   | 256 x 4              | RAM64M x 8  | 
+|axicb_slv_switch:  | bch_mr_fifo/fifo_ram/ram_reg                                         | Implied   | 4 x 8                | RAM32M x 2  | 
+|axicb_slv_switch:  | rch_mr_fifo/fifo_ram/ram_reg                                         | Implied   | 16 x 8               | RAM32M x 3  | 
+|axicb_slv_switch:  | wch_gnt_fifo/fifo_ram/ram_reg                                        | Implied   | 256 x 4              | RAM64M x 8  | 
+|axicb_slv_switch:  | bch_mr_fifo/fifo_ram/ram_reg                                         | Implied   | 4 x 8                | RAM32M x 2  | 
+|axicb_slv_switch:  | rch_mr_fifo/fifo_ram/ram_reg                                         | Implied   | 16 x 8               | RAM32M x 3  | 
+|axicb_mst_switch:  | wch_gnt_fifo/fifo_ram/ram_reg                                        | Implied   | 256 x 4              | RAM64M x 8  | 
+|axicb_mst_switch:  | wch_gnt_fifo/fifo_ram/ram_reg                                        | Implied   | 256 x 4              | RAM64M x 8  | 
+|axicb_mst_switch:  | wch_gnt_fifo/fifo_ram/ram_reg                                        | Implied   | 256 x 4              | RAM64M x 8  | 
+|axicb_mst_switch:  | wch_gnt_fifo/fifo_ram/ram_reg                                        | Implied   | 256 x 4              | RAM64M x 8  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/slv0_if/BUFF_STAGE.aw_scfifo/fifo_ram/ram_reg | Implied   | 4 x 27               | RAM32M x 5  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/slv1_if/BUFF_STAGE.aw_scfifo/fifo_ram/ram_reg | Implied   | 4 x 27               | RAM32M x 5  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/slv2_if/BUFF_STAGE.aw_scfifo/fifo_ram/ram_reg | Implied   | 4 x 27               | RAM32M x 5  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/slv3_if/BUFF_STAGE.aw_scfifo/fifo_ram/ram_reg | Implied   | 4 x 27               | RAM32M x 5  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/slv0_if/BUFF_STAGE.w_scfifo/fifo_ram/ram_reg  | Implied   | 4 x 37               | RAM32M x 7  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/slv0_if/BUFF_STAGE.b_scfifo/fifo_ram/ram_reg  | Implied   | 4 x 10               | RAM32M x 2  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/slv0_if/BUFF_STAGE.ar_scfifo/fifo_ram/ram_reg | Implied   | 4 x 27               | RAM32M x 5  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/slv1_if/BUFF_STAGE.ar_scfifo/fifo_ram/ram_reg | Implied   | 4 x 27               | RAM32M x 5  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/slv2_if/BUFF_STAGE.ar_scfifo/fifo_ram/ram_reg | Implied   | 4 x 27               | RAM32M x 5  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/slv3_if/BUFF_STAGE.ar_scfifo/fifo_ram/ram_reg | Implied   | 4 x 27               | RAM32M x 5  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/slv0_if/BUFF_STAGE.r_scfifo/fifo_ram/ram_reg  | Implied   | 4 x 42               | RAM32M x 7  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/slv1_if/BUFF_STAGE.w_scfifo/fifo_ram/ram_reg  | Implied   | 4 x 37               | RAM32M x 7  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/slv1_if/BUFF_STAGE.b_scfifo/fifo_ram/ram_reg  | Implied   | 4 x 10               | RAM32M x 2  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/slv1_if/BUFF_STAGE.r_scfifo/fifo_ram/ram_reg  | Implied   | 4 x 42               | RAM32M x 7  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/slv2_if/BUFF_STAGE.w_scfifo/fifo_ram/ram_reg  | Implied   | 4 x 37               | RAM32M x 7  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/slv2_if/BUFF_STAGE.b_scfifo/fifo_ram/ram_reg  | Implied   | 4 x 10               | RAM32M x 2  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/slv2_if/BUFF_STAGE.r_scfifo/fifo_ram/ram_reg  | Implied   | 4 x 42               | RAM32M x 7  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/slv3_if/BUFF_STAGE.w_scfifo/fifo_ram/ram_reg  | Implied   | 4 x 37               | RAM32M x 7  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/slv3_if/BUFF_STAGE.b_scfifo/fifo_ram/ram_reg  | Implied   | 4 x 10               | RAM32M x 2  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/slv3_if/BUFF_STAGE.r_scfifo/fifo_ram/ram_reg  | Implied   | 4 x 42               | RAM32M x 7  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/mst0_if/BUFF_STAGE.aw_scfifo/fifo_ram/ram_reg | Implied   | 4 x 27               | RAM32M x 5  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/mst0_if/BUFF_STAGE.w_scfifo/fifo_ram/ram_reg  | Implied   | 4 x 36               | RAM32M x 6  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/mst0_if/BUFF_STAGE.b_scfifo/fifo_ram/ram_reg  | Implied   | 4 x 10               | RAM32M x 2  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/mst1_if/BUFF_STAGE.b_scfifo/fifo_ram/ram_reg  | Implied   | 4 x 10               | RAM32M x 2  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/mst2_if/BUFF_STAGE.b_scfifo/fifo_ram/ram_reg  | Implied   | 4 x 10               | RAM32M x 2  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/mst3_if/BUFF_STAGE.b_scfifo/fifo_ram/ram_reg  | Implied   | 4 x 10               | RAM32M x 2  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/mst0_if/BUFF_STAGE.ar_scfifo/fifo_ram/ram_reg | Implied   | 4 x 27               | RAM32M x 5  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/mst0_if/BUFF_STAGE.r_scfifo/fifo_ram/ram_reg  | Implied   | 4 x 43               | RAM32M x 8  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/mst1_if/BUFF_STAGE.aw_scfifo/fifo_ram/ram_reg | Implied   | 4 x 27               | RAM32M x 5  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/mst1_if/BUFF_STAGE.w_scfifo/fifo_ram/ram_reg  | Implied   | 4 x 36               | RAM32M x 6  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/mst1_if/BUFF_STAGE.ar_scfifo/fifo_ram/ram_reg | Implied   | 4 x 27               | RAM32M x 5  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/mst1_if/BUFF_STAGE.r_scfifo/fifo_ram/ram_reg  | Implied   | 4 x 43               | RAM32M x 8  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/mst2_if/BUFF_STAGE.aw_scfifo/fifo_ram/ram_reg | Implied   | 4 x 27               | RAM32M x 5  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/mst2_if/BUFF_STAGE.w_scfifo/fifo_ram/ram_reg  | Implied   | 4 x 36               | RAM32M x 6  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/mst2_if/BUFF_STAGE.ar_scfifo/fifo_ram/ram_reg | Implied   | 4 x 27               | RAM32M x 5  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/mst2_if/BUFF_STAGE.r_scfifo/fifo_ram/ram_reg  | Implied   | 4 x 43               | RAM32M x 8  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/mst3_if/BUFF_STAGE.aw_scfifo/fifo_ram/ram_reg | Implied   | 4 x 27               | RAM32M x 5  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/mst3_if/BUFF_STAGE.w_scfifo/fifo_ram/ram_reg  | Implied   | 4 x 36               | RAM32M x 6  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/mst3_if/BUFF_STAGE.ar_scfifo/fifo_ram/ram_reg | Implied   | 4 x 27               | RAM32M x 5  | 
+|axicb_crossbar_top | axi4lite_crossbar_inst/mst3_if/BUFF_STAGE.r_scfifo/fifo_ram/ram_reg  | Implied   | 4 x 43               | RAM32M x 8  | 
++-------------------+----------------------------------------------------------------------+-----------+----------------------+-------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:02:32 ; elapsed = 00:02:42 . Memory (MB): peak = 1560.273 ; gain = 695.594
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:02:54 ; elapsed = 00:03:05 . Memory (MB): peak = 1574.086 ; gain = 709.406
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:54 ; elapsed = 00:03:05 . Memory (MB): peak = 1574.086 ; gain = 709.406
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:56 ; elapsed = 00:03:11 . Memory (MB): peak = 1574.086 ; gain = 709.406
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:56 ; elapsed = 00:03:11 . Memory (MB): peak = 1574.086 ; gain = 709.406
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:57 ; elapsed = 00:03:12 . Memory (MB): peak = 1574.086 ; gain = 709.406
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:57 ; elapsed = 00:03:12 . Memory (MB): peak = 1574.086 ; gain = 709.406
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |     3|
+|2     |CARRY4   |    42|
+|3     |LUT1     |    45|
+|4     |LUT2     |   222|
+|5     |LUT3     |   378|
+|6     |LUT4     |   367|
+|7     |LUT5     |   487|
+|8     |LUT6     |  1212|
+|9     |RAM32M   |   208|
+|10    |RAM32X1D |    24|
+|11    |RAM64M   |    32|
+|12    |RAM64X1D |    32|
+|13    |FDCE     |   492|
+|14    |FDPE     |    64|
+|15    |IBUF     |   635|
+|16    |OBUF     |   608|
+|17    |OBUFT    |    20|
++------+---------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:57 ; elapsed = 00:03:12 . Memory (MB): peak = 1574.086 ; gain = 709.406
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 41 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:21 ; elapsed = 00:03:02 . Memory (MB): peak = 1574.086 ; gain = 645.609
+Synthesis Optimization Complete : Time (s): cpu = 00:02:57 ; elapsed = 00:03:12 . Memory (MB): peak = 1574.086 ; gain = 709.406
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.535 . Memory (MB): peak = 1586.195 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 338 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1589.832 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 296 instances were transformed.
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 208 instances
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 24 instances
+  RAM64M => RAM64M (RAMD64E(x4)): 32 instances
+  RAM64X1D => RAM64X1D (RAMD64E(x2)): 32 instances
+
+Synth Design complete | Checksum: a75e48e4
+INFO: [Common 17-83] Releasing license: Synthesis
+76 Infos, 171 Warnings, 13 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:03:14 ; elapsed = 00:03:39 . Memory (MB): peak = 1589.832 ; gain = 1120.031
+INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+Write ShapeDB Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.342 . Memory (MB): peak = 1589.832 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/hp/axi_baseline_1/axi_baseline_1.runs/synth_1/axicb_crossbar_top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file axicb_crossbar_top_utilization_synth.rpt -pb axicb_crossbar_top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Fri Apr 26 11:21:01 2024...
