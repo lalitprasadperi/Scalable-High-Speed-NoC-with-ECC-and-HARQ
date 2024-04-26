@@ -71,49 +71,49 @@ for {set i 0} {$i < 32} {incr i} {
 
 # Define/ Assume hold time constraints for master address write valid (aw_valid) ports (output)
 for {set i 0} {$i < 1} {incr i} {
-    set_output_delay -clock master_clk_0 -min 0.010 [get_ports mst0_awvalid[$i]]
-    set_output_delay -clock master_clk_1 -min 0.010 [get_ports mst1_awvalid[$i]]
-    set_output_delay -clock master_clk_2 -min 0.010 [get_ports mst2_awvalid[$i]]
-    set_output_delay -clock master_clk_3 -min 0.010 [get_ports mst3_awvalid[$i]]
+    set_output_delay -clock master_clk_0 -min 0.010 [get_ports mst0_awvalid]
+    set_output_delay -clock master_clk_1 -min 0.010 [get_ports mst1_awvalid]
+    set_output_delay -clock master_clk_2 -min 0.010 [get_ports mst2_awvalid]
+    set_output_delay -clock master_clk_3 -min 0.010 [get_ports mst3_awvalid]
 }
 # Define/ Assume setup time constraints for slave address write valid (aw_valid) ports (input)
 for {set i 0} {$i < 1} {incr i} {
-    set_input_delay -clock slave_clk_0 -min 0.030 [get_ports slv0_awvalid[$i]]
-    set_input_delay -clock slave_clk_1 -min 0.030 [get_ports slv1_awvalid[$i]]
-    set_input_delay -clock slave_clk_2 -min 0.030 [get_ports slv2_awvalid[$i]]
-    set_input_delay -clock slave_clk_3 -min 0.030 [get_ports slv3_awvalid[$i]]
+    set_input_delay -clock slave_clk_0 -min 0.030 [get_ports slv0_awvalid]
+    set_input_delay -clock slave_clk_1 -min 0.030 [get_ports slv1_awvalid]
+    set_input_delay -clock slave_clk_2 -min 0.030 [get_ports slv2_awvalid]
+    set_input_delay -clock slave_clk_3 -min 0.030 [get_ports slv3_awvalid]
 }
 
 
 # Define/ Assume hold time constraints for master data write valid (w_valid) ports (output)
 for {set i 0} {$i < 1} {incr i} {
-    set_output_delay -clock master_clk_0 -min 0.010 [get_ports mst0_wvalid[$i]]
-    set_output_delay -clock master_clk_1 -min 0.010 [get_ports mst1_wvalid[$i]]
-    set_output_delay -clock master_clk_2 -min 0.010 [get_ports mst2_wvalid[$i]]
-    set_output_delay -clock master_clk_3 -min 0.010 [get_ports mst3_wvalid[$i]]
+    set_output_delay -clock master_clk_0 -min 0.010 [get_ports mst0_wvalid]
+    set_output_delay -clock master_clk_1 -min 0.010 [get_ports mst1_wvalid]
+    set_output_delay -clock master_clk_2 -min 0.010 [get_ports mst2_wvalid]
+    set_output_delay -clock master_clk_3 -min 0.010 [get_ports mst3_wvalid]
 }
 # Define/ Assume setup time constraints for slave data write valid (w_valid) ports (input)
 for {set i 0} {$i < 1} {incr i} {
-    set_input_delay -clock slave_clk_0 -min 0.030 [get_ports slv0_wvalid[$i]]
-    set_input_delay -clock slave_clk_1 -min 0.030 [get_ports slv1_wvalid[$i]]
-    set_input_delay -clock slave_clk_2 -min 0.030 [get_ports slv2_wvalid[$i]]
-    set_input_delay -clock slave_clk_3 -min 0.030 [get_ports slv3_wvalid[$i]]
+    set_input_delay -clock slave_clk_0 -min 0.030 [get_ports slv0_wvalid]
+    set_input_delay -clock slave_clk_1 -min 0.030 [get_ports slv1_wvalid]
+    set_input_delay -clock slave_clk_2 -min 0.030 [get_ports slv2_wvalid]
+    set_input_delay -clock slave_clk_3 -min 0.030 [get_ports slv3_wvalid]
 }
 
 
 # Define/ Assume hold time constraints for master address read valid (ar_valid) ports (output)
 for {set i 0} {$i < 1} {incr i} {
-    set_output_delay -clock master_clk_0 -min 0.010 [get_ports mst0_arvalid[$i]]
-    set_output_delay -clock master_clk_1 -min 0.010 [get_ports mst1_arvalid[$i]]
-    set_output_delay -clock master_clk_2 -min 0.010 [get_ports mst2_arvalid[$i]]
-    set_output_delay -clock master_clk_3 -min 0.010 [get_ports mst3_arvalid[$i]]
+    set_output_delay -clock master_clk_0 -min 0.010 [get_ports mst0_arvalid]
+    set_output_delay -clock master_clk_1 -min 0.010 [get_ports mst1_arvalid]
+    set_output_delay -clock master_clk_2 -min 0.010 [get_ports mst2_arvalid]
+    set_output_delay -clock master_clk_3 -min 0.010 [get_ports mst3_arvalid]
 }
 # Define/ Assume setup time constraints for slave address read valid (ar_valid) ports (input)
 for {set i 0} {$i < 1} {incr i} {
-    set_input_delay -clock slave_clk_0 -min 0.030 [get_ports slv0_arvalid[$i]]
-    set_input_delay -clock slave_clk_1 -min 0.030 [get_ports slv1_arvalid[$i]]
-    set_input_delay -clock slave_clk_2 -min 0.030 [get_ports slv2_arvalid[$i]]
-    set_input_delay -clock slave_clk_3 -min 0.030 [get_ports slv3_arvalid[$i]]
+    set_input_delay -clock slave_clk_0 -min 0.030 [get_ports slv0_arvalid]
+    set_input_delay -clock slave_clk_1 -min 0.030 [get_ports slv1_arvalid]
+    set_input_delay -clock slave_clk_2 -min 0.030 [get_ports slv2_arvalid]
+    set_input_delay -clock slave_clk_3 -min 0.030 [get_ports slv3_arvalid]
 }
 
 
@@ -121,33 +121,33 @@ for {set i 0} {$i < 1} {incr i} {
 
 # Define/ Assume hold time constraints for slave read data valid (r_valid) ports (output)
 for {set i 0} {$i < 1} {incr i} {
-    set_output_delay -clock slave_clk_0 -min 0.010 [get_ports slv0_rvalid[$i]]
-    set_output_delay -clock slave_clk_1 -min 0.010 [get_ports slv1_rvalid[$i]]
-    set_output_delay -clock slave_clk_2 -min 0.010 [get_ports slv2_rvalid[$i]]
-    set_output_delay -clock slave_clk_3 -min 0.010 [get_ports slv3_rvalid[$i]]
+    set_output_delay -clock slave_clk_0 -min 0.010 [get_ports slv0_rvalid]
+    set_output_delay -clock slave_clk_1 -min 0.010 [get_ports slv1_rvalid]
+    set_output_delay -clock slave_clk_2 -min 0.010 [get_ports slv2_rvalid]
+    set_output_delay -clock slave_clk_3 -min 0.010 [get_ports slv3_rvalid]
 }
 # Define/ Assume setup time constraints for master read data valid (r_valid) ports (input)
 for {set i 0} {$i < 1} {incr i} {
-    set_input_delay -clock master_clk_0 -min 0.030 [get_ports mst0_rvalid[$i]]
-    set_input_delay -clock master_clk_1 -min 0.030 [get_ports mst1_rvalid[$i]]
-    set_input_delay -clock master_clk_2 -min 0.030 [get_ports mst2_rvalid[$i]]
-    set_input_delay -clock master_clk_3 -min 0.030 [get_ports mst3_rvalid[$i]]
+    set_input_delay -clock master_clk_0 -min 0.030 [get_ports mst0_rvalid]
+    set_input_delay -clock master_clk_1 -min 0.030 [get_ports mst1_rvalid]
+    set_input_delay -clock master_clk_2 -min 0.030 [get_ports mst2_rvalid]
+    set_input_delay -clock master_clk_3 -min 0.030 [get_ports mst3_rvalid]
 }
 
 
 # Define/ Assume setup time constraints for master burst response valid (b_valid) ports (input)
 for {set i 0} {$i < 1} {incr i} {
-    set_input_delay -clock master_clk_0 -min 0.030 [get_ports mst0_bvalid[$i]]
-    set_input_delay -clock master_clk_1 -min 0.030 [get_ports mst1_bvalid[$i]]
-    set_input_delay -clock master_clk_2 -min 0.030 [get_ports mst2_bvalid[$i]]
-    set_input_delay -clock master_clk_3 -min 0.030 [get_ports mst3_bvalid[$i]]
+    set_input_delay -clock master_clk_0 -min 0.030 [get_ports mst0_bvalid]
+    set_input_delay -clock master_clk_1 -min 0.030 [get_ports mst1_bvalid]
+    set_input_delay -clock master_clk_2 -min 0.030 [get_ports mst2_bvalid]
+    set_input_delay -clock master_clk_3 -min 0.030 [get_ports mst3_bvalid]
 }
 # Define/ Assume hold time constraints for slave burst response valid (b_valid) ports (output)
 for {set i 0} {$i < 1} {incr i} {
-    set_output_delay -clock slave_clk_0 -min 0.010 [get_ports slv0_bvalid[$i]]
-    set_output_delay -clock slave_clk_1 -min 0.010 [get_ports slv1_bvalid[$i]]
-    set_output_delay -clock slave_clk_2 -min 0.010 [get_ports slv2_bvalid[$i]]
-    set_output_delay -clock slave_clk_3 -min 0.010 [get_ports slv3_bvalid[$i]]
+    set_output_delay -clock slave_clk_0 -min 0.010 [get_ports slv0_bvalid]
+    set_output_delay -clock slave_clk_1 -min 0.010 [get_ports slv1_bvalid]
+    set_output_delay -clock slave_clk_2 -min 0.010 [get_ports slv2_bvalid]
+    set_output_delay -clock slave_clk_3 -min 0.010 [get_ports slv3_bvalid]
 }
 
 
@@ -371,33 +371,33 @@ for {set i 0} {$i < 8} {incr i} {
 
 # Define/ Assume hold time constraints for master burst ready (bready) ports (output)
 for {set i 0} {$i < 1} {incr i} {
-    set_output_delay -clock master_clk_0 -min 0.010 [get_ports mst0_bready[$i]]
-    set_output_delay -clock master_clk_1 -min 0.010 [get_ports mst1_bready[$i]]
-    set_output_delay -clock master_clk_2 -min 0.010 [get_ports mst2_bready[$i]]
-    set_output_delay -clock master_clk_3 -min 0.010 [get_ports mst3_bready[$i]]
+    set_output_delay -clock master_clk_0 -min 0.010 [get_ports mst0_bready]
+    set_output_delay -clock master_clk_1 -min 0.010 [get_ports mst1_bready]
+    set_output_delay -clock master_clk_2 -min 0.010 [get_ports mst2_bready]
+    set_output_delay -clock master_clk_3 -min 0.010 [get_ports mst3_bready]
 }
 # Define/ Assume setup time constraints for slave burst read (bready) ports (input)
 for {set i 0} {$i < 1} {incr i} {
-    set_input_delay -clock slave_clk_0 -min 0.030 [get_ports slv0_bready[$i]]
-    set_input_delay -clock slave_clk_1 -min 0.030 [get_ports slv1_bready[$i]]
-    set_input_delay -clock slave_clk_2 -min 0.030 [get_ports slv2_bready[$i]]
-    set_input_delay -clock slave_clk_3 -min 0.030 [get_ports slv3_bready[$i]]
+    set_input_delay -clock slave_clk_0 -min 0.030 [get_ports slv0_bready]
+    set_input_delay -clock slave_clk_1 -min 0.030 [get_ports slv1_bready]
+    set_input_delay -clock slave_clk_2 -min 0.030 [get_ports slv2_bready]
+    set_input_delay -clock slave_clk_3 -min 0.030 [get_ports slv3_bready]
 }
 
 
 # Define/ Assume hold time constraints for master read ready (rready) ports (output)
 for {set i 0} {$i < 1} {incr i} {
-    set_output_delay -clock master_clk_0 -min 0.010 [get_ports mst0_rready[$i]]
-    set_output_delay -clock master_clk_1 -min 0.010 [get_ports mst1_rready[$i]]
-    set_output_delay -clock master_clk_2 -min 0.010 [get_ports mst2_rready[$i]]
-    set_output_delay -clock master_clk_3 -min 0.010 [get_ports mst3_rready[$i]]
+    set_output_delay -clock master_clk_0 -min 0.010 [get_ports mst0_rready]
+    set_output_delay -clock master_clk_1 -min 0.010 [get_ports mst1_rready]
+    set_output_delay -clock master_clk_2 -min 0.010 [get_ports mst2_rready]
+    set_output_delay -clock master_clk_3 -min 0.010 [get_ports mst3_rready]
 }
 # Define/ Assume setup time constraints for slave read read (rready) ports (input)
 for {set i 0} {$i < 1} {incr i} {
-    set_input_delay -clock slave_clk_0 -min 0.030 [get_ports slv0_rready[$i]]
-    set_input_delay -clock slave_clk_1 -min 0.030 [get_ports slv1_rready[$i]]
-    set_input_delay -clock slave_clk_2 -min 0.030 [get_ports slv2_rready[$i]]
-    set_input_delay -clock slave_clk_3 -min 0.030 [get_ports slv3_rready[$i]]
+    set_input_delay -clock slave_clk_0 -min 0.030 [get_ports slv0_rready]
+    set_input_delay -clock slave_clk_1 -min 0.030 [get_ports slv1_rready]
+    set_input_delay -clock slave_clk_2 -min 0.030 [get_ports slv2_rready]
+    set_input_delay -clock slave_clk_3 -min 0.030 [get_ports slv3_rready]
 }
 
 
@@ -407,49 +407,49 @@ for {set i 0} {$i < 1} {incr i} {
 
 # Define/ Assume hold time constraints for slave address write ready (awready) ports (output)
 for {set i 0} {$i < 1} {incr i} {
-    set_output_delay -clock slave_clk_0 -min 0.010 [get_ports slv0_awready[$i]]
-    set_output_delay -clock slave_clk_1 -min 0.010 [get_ports slv1_awready[$i]]
-    set_output_delay -clock slave_clk_2 -min 0.010 [get_ports slv2_awready[$i]]
-    set_output_delay -clock slave_clk_3 -min 0.010 [get_ports slv3_awready[$i]]
+    set_output_delay -clock slave_clk_0 -min 0.010 [get_ports slv0_awready]
+    set_output_delay -clock slave_clk_1 -min 0.010 [get_ports slv1_awready]
+    set_output_delay -clock slave_clk_2 -min 0.010 [get_ports slv2_awready]
+    set_output_delay -clock slave_clk_3 -min 0.010 [get_ports slv3_awready]
 }
 # Define/ Assume setup time constraints for master address write ready (awready) ports (input)
 for {set i 0} {$i < 1} {incr i} {
-    set_input_delay -clock master_clk_0 -min 0.030 [get_ports mst0_awready[$i]]
-    set_input_delay -clock master_clk_1 -min 0.030 [get_ports mst1_awready[$i]]
-    set_input_delay -clock master_clk_2 -min 0.030 [get_ports mst2_awready[$i]]
-    set_input_delay -clock master_clk_3 -min 0.030 [get_ports mst3_awready[$i]]
+    set_input_delay -clock master_clk_0 -min 0.030 [get_ports mst0_awready]
+    set_input_delay -clock master_clk_1 -min 0.030 [get_ports mst1_awready]
+    set_input_delay -clock master_clk_2 -min 0.030 [get_ports mst2_awready]
+    set_input_delay -clock master_clk_3 -min 0.030 [get_ports mst3_awready]
 }
 
 
 # Define/ Assume hold time constraints for slave write ready (wready) ports (output)
 for {set i 0} {$i < 1} {incr i} {
-    set_output_delay -clock slave_clk_0 -min 0.010 [get_ports slv0_wready[$i]]
-    set_output_delay -clock slave_clk_1 -min 0.010 [get_ports slv1_wready[$i]]
-    set_output_delay -clock slave_clk_2 -min 0.010 [get_ports slv2_wready[$i]]
-    set_output_delay -clock slave_clk_3 -min 0.010 [get_ports slv3_wready[$i]]
+    set_output_delay -clock slave_clk_0 -min 0.010 [get_ports slv0_wready]
+    set_output_delay -clock slave_clk_1 -min 0.010 [get_ports slv1_wready]
+    set_output_delay -clock slave_clk_2 -min 0.010 [get_ports slv2_wready]
+    set_output_delay -clock slave_clk_3 -min 0.010 [get_ports slv3_wready]
 }
 # Define/ Assume setup time constraints for master write ready (wready) ports (input)
 for {set i 0} {$i < 1} {incr i} {
-    set_input_delay -clock master_clk_0 -min 0.030 [get_ports mst0_wready[$i]]
-    set_input_delay -clock master_clk_1 -min 0.030 [get_ports mst1_wready[$i]]
-    set_input_delay -clock master_clk_2 -min 0.030 [get_ports mst2_wready[$i]]
-    set_input_delay -clock master_clk_3 -min 0.030 [get_ports mst3_wready[$i]]
+    set_input_delay -clock master_clk_0 -min 0.030 [get_ports mst0_wready]
+    set_input_delay -clock master_clk_1 -min 0.030 [get_ports mst1_wready]
+    set_input_delay -clock master_clk_2 -min 0.030 [get_ports mst2_wready]
+    set_input_delay -clock master_clk_3 -min 0.030 [get_ports mst3_wready]
 }
 
 
 # Define/ Assume hold time constraints for slave address read ready (arready) ports (output)
 for {set i 0} {$i < 1} {incr i} {
-    set_output_delay -clock slave_clk_0 -min 0.010 [get_ports slv0_arready[$i]]
-    set_output_delay -clock slave_clk_1 -min 0.010 [get_ports slv1_arready[$i]]
-    set_output_delay -clock slave_clk_2 -min 0.010 [get_ports slv2_arready[$i]]
-    set_output_delay -clock slave_clk_3 -min 0.010 [get_ports slv3_arready[$i]]
+    set_output_delay -clock slave_clk_0 -min 0.010 [get_ports slv0_arready]
+    set_output_delay -clock slave_clk_1 -min 0.010 [get_ports slv1_arready]
+    set_output_delay -clock slave_clk_2 -min 0.010 [get_ports slv2_arready]
+    set_output_delay -clock slave_clk_3 -min 0.010 [get_ports slv3_arready]
 }
 # Define/ Assume setup time constraints for master address read ready (arready) ports (input)
 for {set i 0} {$i < 1} {incr i} {
-    set_input_delay -clock master_clk_0 -min 0.030 [get_ports mst0_arready[$i]]
-    set_input_delay -clock master_clk_1 -min 0.030 [get_ports mst1_arready[$i]]
-    set_input_delay -clock master_clk_2 -min 0.030 [get_ports mst2_arready[$i]]
-    set_input_delay -clock master_clk_3 -min 0.030 [get_ports mst3_arready[$i]]
+    set_input_delay -clock master_clk_0 -min 0.030 [get_ports mst0_arready]
+    set_input_delay -clock master_clk_1 -min 0.030 [get_ports mst1_arready]
+    set_input_delay -clock master_clk_2 -min 0.030 [get_ports mst2_arready]
+    set_input_delay -clock master_clk_3 -min 0.030 [get_ports mst3_arready]
 }
 
 
