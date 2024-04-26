@@ -8,7 +8,7 @@
 
 //-----------------------------------------------------------------------------------
 // # Defining timing constraints for Clock Plan #1 for basic logic design : 
-// # Clock Frequencies in MHz (Global/M/S 0 - M/S 1 - M/S#2 - M/S 3): 200-100-50-25
+// # Clock Frequencies in MHz (Global/M/S 0 - M/S 1 - M/S#2 - M/S 3): 600-300-150-60
 // # Setup time for input ports - 30ps
 // # Hold time for output ports - 10ps
 //-----------------------------------------------------------------------------------
