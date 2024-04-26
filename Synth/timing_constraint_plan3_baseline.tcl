@@ -8,22 +8,22 @@
 
 //-----------------------------------------------------------------------------------
 // # Defining timing constraints for Clock Plan #1 for basic logic design : 
-// # Clock Frequencies in MHz (Global/M/S 0 - M/S 1 - M/S#2 - M/S 3): 200-100-50-25
+// # Clock Frequencies in MHz (Global/M/S 0 - M/S 1 - M/S#2 - M/S 3): 600-300-150-60
 // # Setup time for input ports - 30ps
 // # Hold time for output ports - 10ps
 //-----------------------------------------------------------------------------------
 
-create_clock -name global_clk -period 5 [get_ports {aclk}]  ;# Global 200 MHz
+create_clock -name global_clk -period 1.67 [get_ports {aclk}]  ;# Global 600 MHz
 
-create_clock -name master_clk_0 -period 5 [get_ports {mst0_aclk}]  ;# 200 MHz
-create_clock -name master_clk_1 -period 10 [get_ports {mst1_aclk}] ;# 100 MHz
-create_clock -name master_clk_2 -period 20 [get_ports {mst2_aclk}] ;# 50 MHz 
-create_clock -name master_clk_3 -period 40 [get_ports {mst3_aclk}] ;# 25 MHz
+create_clock -name master_clk_0 -period 1.67 [get_ports {mst0_aclk}]  ;# 600 MHz
+create_clock -name master_clk_1 -period 3.33 [get_ports {mst1_aclk}] ;# 300 MHz
+create_clock -name master_clk_2 -period 6.67 [get_ports {mst2_aclk}] ;# 150 MHz 
+create_clock -name master_clk_3 -period 16.67 [get_ports {mst3_aclk}] ;# 60 MHz
 
-create_clock -name slave_clk_0 -period 5 [get_ports {slv0_aclk}]    ;# 200 MHz
-create_clock -name slave_clk_1 -period 10 [get_ports {slv1_aclk}]   ;# 100 MHz
-create_clock -name slave_clk_2 -period 20 [get_ports {slv2_aclk}]   ;# 50 MHz
-create_clock -name slave_clk_3 -period 40 [get_ports {slv3_aclk}]   ;# 25 MHz
+create_clock -name slave_clk_0 -period 1.67 [get_ports {slv0_aclk}]    ;# 600 MHz
+create_clock -name slave_clk_1 -period 3.33 [get_ports {slv1_aclk}]   ;# 300 MHz
+create_clock -name slave_clk_2 -period 6.67 [get_ports {slv2_aclk}]   ;# 150 MHz
+create_clock -name slave_clk_3 -period 16.67 [get_ports {slv3_aclk}]   ;# 60 MHz
 
 ################################################################################# DATA PORTS TIMING CONSTRAINTS ###################################################################################################
 

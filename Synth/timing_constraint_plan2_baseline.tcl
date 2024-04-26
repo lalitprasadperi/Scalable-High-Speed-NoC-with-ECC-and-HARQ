@@ -7,23 +7,23 @@
 //-----------------------------------------------------------------------------------
 
 //-----------------------------------------------------------------------------------
-// # Defining timing constraints for Clock Plan #1 for basic logic design : 
-// # Clock Frequencies in MHz (Global/M/S 0 - M/S 1 - M/S#2 - M/S 3): 200-100-50-25
+// # Defining timing constraints for Clock Plan #2 for basic logic design : 
+// # Clock Frequencies in MHz (Global/M/S 0 - M/S 1 - M/S#2 - M/S 3): 400-200-100-80
 // # Setup time for input ports - 30ps
 // # Hold time for output ports - 10ps
 //-----------------------------------------------------------------------------------
 
-create_clock -name global_clk -period 5 [get_ports {aclk}]  ;# Global 200 MHz
+create_clock -name global_clk -period 2.5 [get_ports {aclk}]  ;# Global 400 MHz
 
-create_clock -name master_clk_0 -period 5 [get_ports {mst0_aclk}]  ;# 200 MHz
-create_clock -name master_clk_1 -period 10 [get_ports {mst1_aclk}] ;# 100 MHz
-create_clock -name master_clk_2 -period 20 [get_ports {mst2_aclk}] ;# 50 MHz 
-create_clock -name master_clk_3 -period 40 [get_ports {mst3_aclk}] ;# 25 MHz
+create_clock -name master_clk_0 -period 2.5 [get_ports {mst0_aclk}]  ;# 400 MHz
+create_clock -name master_clk_1 -period 5 [get_ports {mst1_aclk}] ;# 200 MHz
+create_clock -name master_clk_2 -period 10 [get_ports {mst2_aclk}] ;# 100 MHz 
+create_clock -name master_clk_3 -period 12.5 [get_ports {mst3_aclk}] ;# 80 MHz
 
-create_clock -name slave_clk_0 -period 5 [get_ports {slv0_aclk}]    ;# 200 MHz
-create_clock -name slave_clk_1 -period 10 [get_ports {slv1_aclk}]   ;# 100 MHz
-create_clock -name slave_clk_2 -period 20 [get_ports {slv2_aclk}]   ;# 50 MHz
-create_clock -name slave_clk_3 -period 40 [get_ports {slv3_aclk}]   ;# 25 MHz
+create_clock -name slave_clk_0 -period 2.5 [get_ports {slv0_aclk}]    ;# 400 MHz
+create_clock -name slave_clk_1 -period 5 [get_ports {slv1_aclk}]   ;# 200 MHz
+create_clock -name slave_clk_2 -period 10 [get_ports {slv2_aclk}]   ;# 100 MHz
+create_clock -name slave_clk_3 -period 12.5 [get_ports {slv3_aclk}]   ;# 80 MHz
 
 ################################################################################# DATA PORTS TIMING CONSTRAINTS ###################################################################################################
 
