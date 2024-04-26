@@ -1,4 +1,4 @@
-# Define clocks with their frequencies for Clock Plan #1 for Base Logic Design
+# Define clocks with their frequencies for Clock Plan #2 for Base Logic Design
 create_clock -name master_clk_0 -period 2.5 [get_ports {mst0_aclk}]  ;# 400 MHz
 create_clock -name master_clk_1 -period 5 [get_ports {mst1_aclk}] ;# 200 MHz
 create_clock -name master_clk_2 -period 10 [get_ports {mst2_aclk}] ;# 100 MHz 
