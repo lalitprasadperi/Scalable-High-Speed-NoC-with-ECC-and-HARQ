@@ -13,7 +13,7 @@ module axicb_mst_if
         // ID width in bits
         parameter AXI_ID_W = 8,
         // Data width in bits
-        parameter AXI_DATA_W = 8,
+        parameter AXI_DATA_W = 40,
 
         // STRB support:
         //   - 0: contiguous wstrb (store only 1st/last dataphase)
@@ -137,9 +137,12 @@ module axicb_mst_if
     logic [AXI_ADDR_W    -1:0] araddr;
 
     wire        i_wvalid_w;
-    wire [40:0] i_wdata_w;
+    wire [39:0] i_wdata_w;
 
-    reg  [2:0]  secded_bresp;
+    wire serr_w;
+    wire derr_w;
+    reg  [1:0]  secded_bresp;
+
 
     generate
 
@@ -666,9 +669,11 @@ module axicb_mst_if
 
     generate
         if (USER_SUPPORT>0 && AXI_BUSER_W>0) begin: BUSER_ON
-            assign bch = {o_buser, o_bresp, o_bid};
+            //assign bch = {o_buser, o_bresp, o_bid};
+            assign bch = {o_buser, secded_bresp, o_bid};
         end else begin: BUSER_OFF
-            assign bch = {o_bresp, o_bid};
+            //assign bch = {o_bresp, o_bid};
+            assign bch = {secded_bresp, o_bid};
         end
     endgenerate
 
@@ -689,8 +694,11 @@ module axicb_mst_if
     endgenerate
 
 
-
+//------------------------------
 // ECC-HARQ Logic
+//------------------------------
+
+
  ecc_secded ecc_secded
     (
         .i_aclk        (i_aclk),
@@ -699,11 +707,23 @@ module axicb_mst_if
         .i_wvalid      (i_wvalid) ,
         .o_wvalid      (i_wvalid_w),
         .i_wdata       (i_wdata_w),
-	.o_serr        (),
-	.o_decerr      (),
+	.o_serr        (serr_w),
+	.o_decerr      (derr_w),
         .o_wdata       (o_wdata)
     );
 
+//------------------------------
+// Change Slave Respose to HARQ / SLV_ERR on double-bit error
+//------------------------------
+always_ff@(posedge i_aclk or i_aresetn)
+begin
+  if(!i_aresetn)
+    secded_bresp <= 2'b0;
+  else
+    secded_bresp <= derr_w? 2'b10 : o_bresp;
+end
+
 
 endmodule
+
 

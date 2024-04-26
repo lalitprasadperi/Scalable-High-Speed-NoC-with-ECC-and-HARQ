@@ -40,7 +40,7 @@ else
   o_wvalid         <= i_wvalid;
   //o_wdata[31:0]    <= i_wdata[31:0]; 
   //o_wdata[39:32]   <= 8'b0; 
-  recvd_ecc[39:32] <= i_wdata[39:32]; 
+  recvd_ecc[7:0] <= i_wdata[39:32]; 
   end
 end
 
@@ -99,6 +99,8 @@ if(!i_aresetn)
 else
 	if(i_enable_ecc)
 	begin
+	//  Calculated ECC & Recievd ECC bits dont match and it is not
+	//  single-bit error then flag double bit error;
 	  o_decerr <= o_serr? 1'b0: (recvd_ecc!==gen_ecc);
 	end
 	else

@@ -20,7 +20,7 @@ module axicb_crossbar
         // ID width in bits
         parameter AXI_ID_W = 8,
         // Data width in bits
-        parameter AXI_DATA_W = 32,
+        parameter AXI_DATA_W = 40,
         // Number of master(s)
         parameter MST_NB = 4,
         // Number of slave(s)
