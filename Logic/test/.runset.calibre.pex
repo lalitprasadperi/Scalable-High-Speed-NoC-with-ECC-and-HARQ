@@ -1,0 +1,10 @@
+*pexRulesFile: $PDK_DIR/ncsu_basekit/techfile/calibre/calibrexRC.rul
+
+*pexLayoutGetFromViewer: 1
+*pexSourceGetFromViewer: 1
+*pexPexNetlistFormat: CALIBREVIEW
+*cmnWarnLayoutOverwrite: 0
+*cmnWarnSourceOverwrite: 0
+
+*pexCalibreViewCellMapFile: $PDK_DIR/ncsu_basekit/techfile/calibre/calview.cellmap
+*pexCalibreViewCellMapFileEnabled: 1

@@ -2,16 +2,17 @@
 // File created by:  ncverilog
 // Do not modify this file
 //
-/home/lalitprasad/ECE5545/AXI_NOC/Logic/rtl/axicb_scfifo_ram.sv
-/home/lalitprasad/ECE5545/AXI_NOC/Logic/rtl/axicb_scfifo.sv
-/home/lalitprasad/ECE5545/AXI_NOC/Logic/rtl/axicb_pipeline.sv
-/home/lalitprasad/ECE5545/AXI_NOC/Logic/rtl/axicb_round_robin_core.sv
-/home/lalitprasad/ECE5545/AXI_NOC/Logic/rtl/axicb_round_robin.sv
-/home/lalitprasad/ECE5545/AXI_NOC/Logic/rtl/axicb_mst_if.sv
-/home/lalitprasad/ECE5545/AXI_NOC/Logic/rtl/axicb_slv_if.sv
-/home/lalitprasad/ECE5545/AXI_NOC/Logic/rtl/axicb_mst_switch.sv
-/home/lalitprasad/ECE5545/AXI_NOC/Logic/rtl/axicb_slv_switch.sv
-/home/lalitprasad/ECE5545/AXI_NOC/Logic/rtl/axicb_switch_top.sv
-/home/lalitprasad/ECE5545/AXI_NOC/Logic/rtl/axicb_crossbar_lite_top.sv
-/home/lalitprasad/ECE5545/AXI_NOC/Logic/rtl/axicb_crossbar_top.sv
-/home/lalitprasad/ECE5545/AXI_NOC/Logic/test/simple_tb.v
+/home/lalitprasad/ECE5545/AXI_NOC/Logic_ECC/rtl/ecc_secded.sv
+/home/lalitprasad/ECE5545/AXI_NOC/Logic_ECC/rtl/axicb_scfifo_ram.sv
+/home/lalitprasad/ECE5545/AXI_NOC/Logic_ECC/rtl/axicb_scfifo.sv
+/home/lalitprasad/ECE5545/AXI_NOC/Logic_ECC/rtl/axicb_pipeline.sv
+/home/lalitprasad/ECE5545/AXI_NOC/Logic_ECC/rtl/axicb_round_robin_core.sv
+/home/lalitprasad/ECE5545/AXI_NOC/Logic_ECC/rtl/axicb_round_robin.sv
+/home/lalitprasad/ECE5545/AXI_NOC/Logic_ECC/rtl/axicb_mst_if.sv
+/home/lalitprasad/ECE5545/AXI_NOC/Logic_ECC/rtl/axicb_slv_if.sv
+/home/lalitprasad/ECE5545/AXI_NOC/Logic_ECC/rtl/axicb_mst_switch.sv
+/home/lalitprasad/ECE5545/AXI_NOC/Logic_ECC/rtl/axicb_slv_switch.sv
+/home/lalitprasad/ECE5545/AXI_NOC/Logic_ECC/rtl/axicb_switch_top.sv
+/home/lalitprasad/ECE5545/AXI_NOC/Logic_ECC/rtl/axicb_crossbar.sv
+/home/lalitprasad/ECE5545/AXI_NOC/Logic_ECC/rtl/axicb_crossbar_top.sv
+/home/lalitprasad/ECE5545/AXI_NOC/Logic_ECC/test/simple_tb.v

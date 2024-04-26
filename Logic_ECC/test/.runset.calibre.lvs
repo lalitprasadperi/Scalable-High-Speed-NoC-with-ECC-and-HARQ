@@ -1,0 +1,6 @@
+*lvsRulesFile: $PDK_DIR/ncsu_basekit/techfile/calibre/calibreLVS.rul
+
+*lvsLayoutGetFromViewer: 1
+*lvsSourceGetFromViewer: 1
+*cmnWarnLayoutOverwrite: 0
+*cmnWarnSourceOverwrite: 0

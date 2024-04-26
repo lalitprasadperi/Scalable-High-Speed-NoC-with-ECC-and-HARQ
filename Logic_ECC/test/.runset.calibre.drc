@@ -1,0 +1,3 @@
+*drcRulesFile: $PDK_DIR/ncsu_basekit/techfile/calibre/calibreDRC.rul
+
+*drcLayoutGetFromViewer: 1
