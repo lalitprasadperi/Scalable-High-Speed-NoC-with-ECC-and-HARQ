@@ -136,6 +136,11 @@ module axicb_mst_if
     logic [AXI_ADDR_W    -1:0] awaddr;
     logic [AXI_ADDR_W    -1:0] araddr;
 
+    wire        i_wvalid_w;
+    wire [40:0] i_wdata_w;
+
+    reg  [2:0]  secded_bresp;
+
     generate
 
     ///////////////////////////////////////////////////////////////////////////
@@ -244,7 +249,7 @@ module axicb_mst_if
     );
 
     assign i_wready = ~w_full;
-    assign w_winc = i_wvalid & ~w_full;
+    assign w_winc = i_wvalid_w & ~w_full;
 
     assign o_wvalid = ~w_empty;
     assign w_rinc = ~w_empty & o_wready;
@@ -413,7 +418,7 @@ module axicb_mst_if
     .srst     (i_srst),
     .flush    (1'b0),
     .data_in  ({i_wlast, i_wch}),
-    .push     (i_wvalid),
+    .push     (i_wvalid_w),
     .full     (w_full),
     .data_out ({o_wlast, wch}),
     .pull     (o_wready),
@@ -514,7 +519,7 @@ module axicb_mst_if
     assign i_awready = o_awready;
     assign awch = i_awch;
 
-    assign o_wvalid = i_wvalid;
+    assign o_wvalid = i_wvalid_w;
     assign i_wready = o_wready;
     assign o_wlast = i_wlast;
 
@@ -652,9 +657,9 @@ module axicb_mst_if
     generate
 
         if (USER_SUPPORT>0 && AXI_WUSER_W>0) begin: WUSER_ON
-            assign{o_wuser, o_wstrb, o_wdata} = wch;
+            assign{o_wuser, o_wstrb, i_wdata_w} = wch;
         end else begin: WUSER_OFF
-            assign {o_wstrb, o_wdata} = wch;
+            assign {o_wstrb, i_wdata_w} = wch;
         end
 
     endgenerate
@@ -683,7 +688,22 @@ module axicb_mst_if
         end
     endgenerate
 
+
+
+// ECC-HARQ Logic
+ ecc_secded ecc_secded
+    (
+        .i_aclk        (i_aclk),
+        .i_aresetn     (i_aresetn),
+        .i_enable_ecc  (1'b1),
+        .i_wvalid      (i_wvalid) ,
+        .o_wvalid      (i_wvalid_w),
+        .i_wdata       (i_wdata_w),
+	.o_serr        (),
+	.o_decerr      (),
+        .o_wdata       (o_wdata)
+    );
+
+
 endmodule
-
-
 
