@@ -13,6 +13,8 @@
 // # Hold time for output ports - 10ps
 //-----------------------------------------------------------------------------------
 
+create_clock -name global_clk -period 1.67 [get_ports {aclk}]  ;# Global 600 MHz
+
 create_clock -name master_clk_0 -period 1.67 [get_ports {mst0_aclk}]  ;# 600 MHz
 create_clock -name master_clk_1 -period 3.33 [get_ports {mst1_aclk}] ;# 300 MHz
 create_clock -name master_clk_2 -period 6.67 [get_ports {mst2_aclk}] ;# 150 MHz 
