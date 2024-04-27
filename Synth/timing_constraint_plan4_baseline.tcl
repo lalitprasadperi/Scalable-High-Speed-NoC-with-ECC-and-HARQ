@@ -1,17 +1,17 @@
-//-----------------------------------------------------------------------------------
-// # Author: Alberta Ogbo Dadeboe (albertaod@vt.edu)
-// # Group5 Project: Advance VLSI Design, ECE5545 Spring2024 
-//-----------------------------------------------------------------------------------
-// # distributed under the mit license
-// # https://opensource.org/licenses/mit-license.php
-//-----------------------------------------------------------------------------------
+#//-----------------------------------------------------------------------------------
+#// # Author: Alberta Ogbo Dadeboe (albertaod@vt.edu)
+#// # Group5 Project: Advance VLSI Design, ECE5545 Spring2024 
+#//-----------------------------------------------------------------------------------
+#// # distributed under the mit license
+#// # https://opensource.org/licenses/mit-license.php
+#//-----------------------------------------------------------------------------------
 
-//-----------------------------------------------------------------------------------
-// # Defining timing constraints for Clock Plan #1 for basic logic design : 
-// # Clock Frequencies in MHz (Global/M/S 0 - M/S 1 - M/S#2 - M/S 3): 800-400-200-160
-// # Setup time for input ports - 30ps
-// # Hold time for output ports - 10ps
-//-----------------------------------------------------------------------------------
+#//-----------------------------------------------------------------------------------
+#// # Defining timing constraints for Clock Plan #4 for basic logic design : 
+#// # Clock Frequencies in MHz (Global/M/S 0 - M/S 1 - M/S#2 - M/S 3): 800-400-200-160
+#// # Setup time for input ports - 30ps
+#// # Hold time for output ports - 10ps
+#//-----------------------------------------------------------------------------------
 
 create_clock -name global_clk -period 1.25 [get_ports {aclk}]  ;# Global 800 MHz
 
