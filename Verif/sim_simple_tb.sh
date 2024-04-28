@@ -17,7 +17,7 @@ ncverilog \
 ../../Logic/rtl/axicb_switch_top.sv \
 ../../Logic/rtl/axicb_crossbar.sv \
 ../../Logic/rtl/axicb_crossbar_top.sv \
-simple_tb.v \
+../../Verif/simple_tb.v \
 +nctimescale+1ns/1ns \
 +access+r \
 +gui
