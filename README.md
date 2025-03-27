@@ -1,5 +1,5 @@
 # Enhancing Reliability of On-Chip Networks with Scalable AXI NOC
-Senior Project for [ECE5545]: AXI NOC with Embedded ECC and HARQ
+
 ## Abstract
 
 This project presents a study focused on enhancing the reliability of on-chip Networks-on-Chip (NOCs) through the implementation of a scalable AXI NOC with embedded **Error Correction Code (ECC)** and **Hybrid Automatic Repeat reQuest (HARQ)** mechanisms. 
